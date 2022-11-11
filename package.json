@@ -1,6 +1,6 @@
 {
   "name": "com.rdragon.tools",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "displayName": "Rdragon tools",
   "description": "Useful tools for Unity",
   "unity": "2019.1",
@@ -9,9 +9,8 @@
   "changelogUrl": "",
   "licensesUrl": "",
   "keywords": [
-    "keyword1",
-    "keyword2",
-    "keyword3"
+    "rdragon",
+    "tools"
   ],
   "author": {
     "name": "RDragon",
