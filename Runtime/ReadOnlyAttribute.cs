@@ -1,7 +1,10 @@
 using UnityEngine;
 
-public class ReadOnlyAttribute : PropertyAttribute
+namespace RDragonTools
 {
-    
+    public class ReadOnlyAttribute : PropertyAttribute
+    {
+
+    }
 }
 
