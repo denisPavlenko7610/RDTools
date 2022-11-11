@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ReadOnlyInspectorAttribute : PropertyAttribute
+public class ReadOnlyAttribute : PropertyAttribute
 {
     
 }
