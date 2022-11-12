@@ -29,5 +29,7 @@ namespace RDragonTools.Extensions
                 list[i] = value;
             }
         }
+
+        public static bool IsNullOrEmpty<T>(this IList<T> list) => list == null || list.Count == 0;
     }
 }
