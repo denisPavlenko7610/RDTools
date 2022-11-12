@@ -4,7 +4,7 @@ Use RDragonTools nameSpace
 - Add Button attribute for methods to create button
 - Add Attach attribute to get some component. Use empty to attach component on this object or with params - Attach scene, or     Attach parent, child to attach these objects.
 
-# Unity auto attach
+# Auto attach
 Auto attach components to serialized fields.
 
 Attaches components in editor when any MonoBehaviour selected, removed or added. 
@@ -48,5 +48,3 @@ Examples:
         [SerializeField] private Light[] allLights;
     }
 ```
-
-![preview](preview.png)
