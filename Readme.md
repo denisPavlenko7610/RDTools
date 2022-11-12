@@ -101,4 +101,15 @@ list.Random(); // return random Ilist element
 
 list.Shuffle();  // shuffle elements
 
+list.RemoveRandom(); // remove random element
+
+```
+TransformExtensions
+```c#
+
+transform.DetachChildren(); // destroys all clildren of this transform
+
+```
+
+
 
