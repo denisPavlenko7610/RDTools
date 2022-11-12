@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace RDragonTools.DataTypes
+namespace RDTools.DataTypes
 {
     [System.Serializable]
     public struct SerializedVector3

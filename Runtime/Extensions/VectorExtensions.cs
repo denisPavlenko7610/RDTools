@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace RDragonTools.Extensions
+namespace RDTools.Extensions
 {
     public static class VectorExtensions
     {

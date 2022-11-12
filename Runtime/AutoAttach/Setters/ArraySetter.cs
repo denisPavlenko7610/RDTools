@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace RDragonTools.AutoAttach.Setters
+namespace RDTools.AutoAttach.Setters
 {
     public class ArraySetter : SetterBase
     {

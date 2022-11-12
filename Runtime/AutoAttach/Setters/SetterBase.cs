@@ -7,7 +7,7 @@ using Object = UnityEngine.Object;
 using Zenject;
 #endif
 
-namespace RDragonTools.AutoAttach.Setters
+namespace RDTools.AutoAttach.Setters
 {
     public abstract class SetterBase
     {

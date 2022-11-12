@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace RDragonTools.DataTypes
+namespace RDTools.DataTypes
 {
     [Serializable]
     public struct SerializedQuaternion

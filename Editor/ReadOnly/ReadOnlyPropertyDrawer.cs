@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace RDragonTools
+namespace RDTools
 {
     [CustomPropertyDrawer(typeof(ReadOnlyAttribute))]
     public class ReadOnlyPropertyDrawer : PropertyDrawer

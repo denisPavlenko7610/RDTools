@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using RDragon.AutoAttach.Utils;
+using RDTools.AutoAttach.Utils;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace RDragonTools.AutoAttach.Setters
+namespace RDTools.AutoAttach.Setters
 {
     public class ListSetter : SetterBase
     {

@@ -1,7 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-namespace RDragonTools.AutoAttach.Editor
+namespace RDTools.AutoAttach.Editor
 {
     [CustomPropertyDrawer(typeof(AttachAttribute), true)]
     public class AutoAttachDrawer : PropertyDrawer

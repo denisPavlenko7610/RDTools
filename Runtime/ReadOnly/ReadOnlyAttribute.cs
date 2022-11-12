@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace RDragonTools
+namespace RDTools
 {
     public class ReadOnlyAttribute : PropertyAttribute
     {

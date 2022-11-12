@@ -1,4 +1,4 @@
-﻿namespace RDragonTools.Extensions
+﻿namespace RDTools.Extensions
 {
     public static class StringExtensions
     {

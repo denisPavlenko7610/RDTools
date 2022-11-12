@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace RDragonTools.Extensions
+namespace RDTools.Extensions
 {
     public static class ListExtensions
     {

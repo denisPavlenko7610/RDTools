@@ -1,3 +1,3 @@
-﻿namespace RDragonTools.AutoAttach
+﻿namespace RDTools.AutoAttach
 {
 }

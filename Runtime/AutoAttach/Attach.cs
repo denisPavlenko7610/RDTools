@@ -1,4 +1,4 @@
-﻿namespace RDragonTools.AutoAttach
+﻿namespace RDTools.AutoAttach
 {
     public enum Attach : byte
     {

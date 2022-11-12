@@ -1,6 +1,6 @@
 ﻿using RDragonTools.Editor;
 
-namespace EditorCools.Editor
+namespace RDTools.Editor
 {
     using UnityEditor;
     using Object = UnityEngine.Object;

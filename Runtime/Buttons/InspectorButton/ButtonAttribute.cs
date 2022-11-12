@@ -1,4 +1,4 @@
-﻿namespace RDragonTools
+﻿namespace RDTools
 {
     using System;
 
