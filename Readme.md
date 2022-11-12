@@ -86,7 +86,9 @@ When attempting to save a Vector3 variable's value (or a Quaternion for that mat
 
 ```c#
 [SerializeField] private SerializedVector2 _vector2;
+
 [SerializeField] private SerializedVector3 _vector3;
+
 [SerializeField] private SerializedQuaternion _quaternion;
 ```
 GameObject extensions
@@ -120,7 +122,9 @@ Color extensions
 Color color = Color.green;
             
 color.SetFullAlpha();
+
 color.SetAlpha(0.5f);
+
 color.SetNoAlpha();
 
 ```
