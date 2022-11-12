@@ -1,4 +1,4 @@
-﻿namespace RDragonTools.Editor
+﻿namespace RDTools.Editor
 {
     using System.Collections.Generic;
     using System.Linq;

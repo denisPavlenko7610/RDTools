@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using RDragon.AutoAttach.Utils;
-using RDragonTools.AutoAttach.Setters;
+using RDTools.AutoAttach.Setters;
 using UnityEditor.Callbacks;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace RDragonTools.AutoAttach.Editor
+namespace RDTools.AutoAttach.Editor
 {
     internal partial class AutoAttachTool
     {

@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using RDragonTools.AutoAttach.Setters;
+using RDTools.AutoAttach.Setters;
 using UnityEditor;
 using UnityEditor.EditorTools;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace RDragonTools.AutoAttach.Editor
+namespace RDTools.AutoAttach.Editor
 {
     [EditorTool(nameof(AutoAttachTool), typeof(MonoBehaviour))]
     internal partial class AutoAttachTool : EditorTool

@@ -1,6 +1,6 @@
 ﻿using UnityEditor;
 
-namespace RDragon.AutoAttach.Utils
+namespace RDTools.AutoAttach.Utils
 {
     public static class Symbols
     {
