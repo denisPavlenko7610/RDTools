@@ -79,7 +79,7 @@ Examples:
 
 # Extentions and utilities
 
-#Serialized vectors, quaternions
+Serialized vectors, quaternions
 
 - UnityEngine.Vector2,3.. is not marked as Serializable. 
 When attempting to save a Vector3 variable's value (or a Quaternion for that matter) to disk, you may find that Unity will throw a UnityEngine.Vector3 is not marked as Serializable error. To work around this, you can create a new SerializedVector struct that can be used to serialize your Vector3 and saved to disk.
@@ -90,7 +90,8 @@ When attempting to save a Vector3 variable's value (or a Quaternion for that mat
 [SerializeField] private SerializedQuaternion _quaternion;
 ```
 # Extentions
-#Get or add
+
+Get or add
 
 ```c#
 gameObject.GetOrAddComponent<Rigidbody>();
