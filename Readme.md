@@ -89,3 +89,10 @@ When attempting to save a Vector3 variable's value (or a Quaternion for that mat
 [SerializeField] private SerializedVector3 _vector3;
 [SerializeField] private SerializedQuaternion _quaternion;
 ```
+# Extentions
+#Get or add
+
+```c#
+gameObject.GetOrAddComponent<Rigidbody>();
+```
+
