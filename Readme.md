@@ -89,12 +89,12 @@ When attempting to save a Vector3 variable's value (or a Quaternion for that mat
 [SerializeField] private SerializedVector3 _vector3;
 [SerializeField] private SerializedQuaternion _quaternion;
 ```
-Get or add
+GameObject extentions
 
 ```c#
 gameObject.GetOrAddComponent<Rigidbody>();
 ```
-ListExtensions
+List extensions
 ```c#
 private IList<string> list = new List<string>() { "string1", "string2", "string3" };
 list.Random(); // return random Ilist element
@@ -104,7 +104,7 @@ list.Shuffle();  // shuffle elements
 list.RemoveRandom(); // remove random element
 
 ```
-TransformExtensions
+Transform extensions
 ```c#
 
 transform.DetachChildren(); // destroys all clildren of this transform
