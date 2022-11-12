@@ -11,13 +11,13 @@ public void DoSomething()
 }
     
 [Button("Add Params")] //add some name
-public void DoSomething()
+private void DoSomething()
 {
     Debug.Log("add params");
 }
 
 [Button("Add Params", space:30f)] // add space
-public void DoSomething()
+private void DoSomething()
 {
     Debug.Log("add params");
 }
