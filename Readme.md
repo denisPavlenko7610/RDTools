@@ -97,9 +97,19 @@ gameObject.GetOrAddComponent<Rigidbody>();
 ListExtensions
 ```c#
 private IList<string> list = new List<string>() { "string1", "string2", "string3" };
-Debug.Log(list.Random()); //return random Ilist element
+list.Random(); // return random Ilist element
 
-private IList<string> list = new List<string>() { "string1", "string2", "string3" };
-list.Shuffle();  //return shuffle element
+list.Shuffle();  // shuffle elements
+
+list.RemoveRandom(); // remove random element
+
+```
+TransformExtensions
+```c#
+
+transform.DetachChildren(); // destroys all clildren of this transform
+
+```
+
 
 
