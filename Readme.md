@@ -158,6 +158,6 @@ To add a SceneField to a script, just use the `Scene` class for the field, which
 At runtime, you can access the build index of the scene using the `Scene.BuildIndex` property:
 ```c#
 
-SceneManager.LoadScene(sceneThingy.BuildIndex);
+SceneManager.LoadScene(scene.BuildIndex);
 
 ```
