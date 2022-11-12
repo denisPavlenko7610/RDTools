@@ -76,3 +76,11 @@ Examples:
         [SerializeField] private Light[] allLights;
     }
 ```
+
+# Extentions and utilities
+
+```c#
+[SerializeField] private SerializedVector2 _vector2;
+[SerializeField] private SerializedVector3 _vector3;
+[SerializeField] private SerializedQuaternion _quaternion;
+```
