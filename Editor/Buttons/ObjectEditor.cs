@@ -1,6 +1,4 @@
-﻿using RDTools.Editor;
-
-namespace RDTools.Editor
+﻿namespace RDTools.Editor
 {
     using UnityEditor;
     using Object = UnityEngine.Object;

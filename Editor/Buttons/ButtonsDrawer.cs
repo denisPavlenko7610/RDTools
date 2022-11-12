@@ -1,10 +1,10 @@
-﻿namespace RDTools.Editor
-{
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Reflection;
-    using UnityEditor;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using UnityEditor;
 
+namespace RDTools.Editor
+{
     public class ButtonsDrawer
     {
         public readonly List<IGrouping<string, Button>> ButtonGroups;

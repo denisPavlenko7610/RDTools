@@ -1,10 +1,10 @@
-﻿namespace RDTools.Editor
-{
-    using System.Reflection;
-    using System.Collections.Generic;
-    using UnityEditor;
-    using UnityEngine;
+﻿using System.Reflection;
+using System.Collections.Generic;
+using UnityEditor;
+using UnityEngine;
 
+namespace RDTools.Editor
+{
     public class Button
     {
         public readonly string DisplayName;
