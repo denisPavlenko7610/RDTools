@@ -1,16 +1,39 @@
 Use RDragonTools nameSpace
 
-- Add ReadOnly attribute to disable editing serializefield
+# Button
+
 - Add Button attribute for methods to create button
-- Add Attach attribute to get some component. Use empty to attach component on this object or with params - Attach scene, or     Attach parent, child to attach these objects.
+```c#
+[Button]
+public void DoSomething()
+{
+    Debug.Log("add params");
+}
+    
+[Button("Add Params")] //add some name
+public void DoSomething()
+{
+    Debug.Log("add params");
+}
+
+[Button("Add Params", space:30f)] // add space
+public void DoSomething()
+{
+    Debug.Log("add params");
+}
+```
+
+# ReadOnly
+
+- Add ReadOnly attribute to disable editing serializefield
+
+```c#
+[SerializeField, ReadOnly] float xSensitivity = 30f;
+```
 
 # Auto attach
-Auto attach components to serialized fields.
 
-Attaches components in editor when any MonoBehaviour selected, removed or added. 
-Attaches only once, so there is almost no performance impact.
-
-Component, components array and component list are supported. For other types you can implement abstract AutoSetter class.
+- Add Attach attribute to get some component. Use empty to attach component on this object or with params - Attach scene, or     Attach parent, child to attach these objects.
 
 Examples:
 
@@ -30,9 +53,11 @@ Examples:
         [Attach(Attach.Child, false)] //Get component in children gameObjects, can be changed in inspector
         [SerializeField]
         private Collider colliderInChildrenModifiable;
+        
         [Attach(Attach.Child)] //Get components in children gameObjects
         [SerializeField]
         private Renderer[] rendererArray;
+        
         [Attach(Attach.Parent)] //Get components in parent gameObjects
         [SerializeField]
         private List<Collider> colliderList;
@@ -40,10 +65,13 @@ Examples:
         [Attach(Attach.Child)] //Get components in children gameObjects
         [SerializeField]
         private List<MeshFilter> meshFilterList;
+        
         [AttachOrAdd] //Get component on current gameObject or add if not exist (similar to RequireComponent)
         public NavMeshAgent requiredAgent;
+        
         [Attach(Attach.Scene)] //Get component in scene
         [SerializeField] private Camera anyCamera;
+        
         [Attach(Attach.Scene)] //Get components in scene
         [SerializeField] private Light[] allLights;
     }
