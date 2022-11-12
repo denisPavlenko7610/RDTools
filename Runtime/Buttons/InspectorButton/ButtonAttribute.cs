@@ -1,6 +1,7 @@
-﻿namespace RDTools
+﻿using System;
+
+namespace RDTools
 {
-    using System;
 
     [AttributeUsage(AttributeTargets.Method, Inherited = true, AllowMultiple = false)]
     public sealed class ButtonAttribute : Attribute
