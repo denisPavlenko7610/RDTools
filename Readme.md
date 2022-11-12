@@ -146,13 +146,8 @@ Usage
 To add a SceneField to a script, just use the `Scene` class for the field, which is inside the `RDTools` namespace:
 
 ```c#
-    using UnityEngine;
-    using RDTools;
-    
-    public class Test : MonoBehaviour
-    {
-        [SerializeField] private Scene _scene;
-    }
+
+[SerializeField] private Scene _scene;
     
 ```
 At runtime, you can access the build index of the scene using the `Scene.BuildIndex` property:
