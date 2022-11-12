@@ -1,6 +1,6 @@
 {
   "name": "com.rdragon.tools",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "displayName": "Rdragon tools",
   "description": "Useful tools for Unity",
   "unity": "2020.2",
