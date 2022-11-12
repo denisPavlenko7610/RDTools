@@ -66,7 +66,7 @@ Examples:
         [SerializeField]
         private List<MeshFilter> meshFilterList;
         
-        [AttachOrAdd] //Get component on current gameObject or add if not exist (similar to RequireComponent)
+        [AttachOrAdd] //Get or add if not exist (similar to RequireComponent)
         public NavMeshAgent requiredAgent;
         
         [Attach(Attach.Scene)] //Get component in scene
