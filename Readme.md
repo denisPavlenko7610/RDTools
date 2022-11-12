@@ -77,7 +77,7 @@ Examples:
     }
 ```
 
-# Extentions and utilities
+# Extensions and utilities
 
 Serialized vectors, quaternions
 
@@ -89,7 +89,7 @@ When attempting to save a Vector3 variable's value (or a Quaternion for that mat
 [SerializeField] private SerializedVector3 _vector3;
 [SerializeField] private SerializedQuaternion _quaternion;
 ```
-GameObject extentions
+GameObject extensions
 
 ```c#
 gameObject.GetOrAddComponent<Rigidbody>();
@@ -103,6 +103,8 @@ list.Shuffle();  // shuffle elements
 
 list.RemoveRandom(); // remove random element
 
+list.IsNullOrEmpty(); // check is list empty or null
+
 ```
 Transform extensions
 ```c#
@@ -111,5 +113,15 @@ transform.DetachChildren(); // destroys all clildren of this transform
 
 ```
 
+Color extensions
 
+```c#
+
+Color color = Color.green;
+            
+color.SetFullAlpha();
+color.SetAlpha(0.5f);
+color.SetNoAlpha();
+
+```
 
