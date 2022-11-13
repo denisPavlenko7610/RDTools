@@ -1,6 +1,7 @@
 # RDTools
 
 - Use RDTools nameSpace and periodically update the package 🙂
+- Actual version - 0.0.7
 
 # Play audio in inspector 
 (by default)
