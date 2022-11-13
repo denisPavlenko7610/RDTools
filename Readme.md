@@ -7,13 +7,13 @@
 
 (some assets were taken from these repositories (https://github.com/baba-s/awesome-unity-open-source-on-github) and have been seriously modified according to the Mit and Apache 2.0 licenses)
 
-# Play audio in inspector 
+## Play audio in inspector 
 (by default)
 
 ![image](https://user-images.githubusercontent.com/13468920/201512579-c8a206aa-1150-4b0f-88c7-61438aea7ef2.png)
 
 
-Add scene links (by default)
+## Add scene links (by default)
 ===========
 
 Extension for Unity that allows directly assigning scenes in the Inspector.
@@ -30,7 +30,7 @@ SceneManager.LoadScene(scene.BuildIndex);
 
 ```
 
-# Button
+## Button
 
 - Add Button attribute for methods to create button
 ```c#
@@ -45,7 +45,7 @@ private void DoSomething() => Debug.Log("add params");
 
 ```
 
-# ReadOnly
+## ReadOnly
 
 - Add ReadOnly attribute to disable editing serializefield
 
@@ -53,7 +53,7 @@ private void DoSomething() => Debug.Log("add params");
 [SerializeField, ReadOnly] private float _xSensitivity = 30f;
 ```
 
-# Auto attach
+## Auto attach
 
 - Add Attach attribute to get some component. Use empty to attach component on this object or with params - Attach scene, or     Attach parent, child to attach these objects.
 
@@ -100,7 +100,7 @@ Examples:
 ```
 
 
-# Serialized vectors, quaternions
+## Serialized vectors, quaternions
 
 - UnityEngine.Vector2,3.. is not marked as Serializable. 
 When attempting to save a Vector3 variable's value (or a Quaternion for that matter) to disk, you may find that Unity will throw a UnityEngine.Vector3 is not marked as Serializable error. To work around this, you can create a new SerializedVector struct that can be used to serialize your Vector3 and saved to disk.
@@ -112,14 +112,14 @@ When attempting to save a Vector3 variable's value (or a Quaternion for that mat
 
 [SerializeField] private SerializedQuaternion _quaternion;
 ```
-# GameObject extensions
+## GameObject extensions
 
 ```c#
 gameObject.GetOrAddComponent<Rigidbody>();
 
 gameObject.SetParent(newObject);
 ```
-# List extensions
+## List extensions
 ```c#
 private IList<string> list = new List<string>() { "string1", "string2", "string3" };
 list.Random(); // return random Ilist element
@@ -131,14 +131,14 @@ list.RemoveRandom(); // remove random element
 list.IsNullOrEmpty(); // check is list empty or null
 
 ```
-# Transform extensions
+## Transform extensions
 ```c#
 
 transform.DetachChildren(); // destroys all clildren of this transform
 
 ```
 
-# Vector Extensions
+## Vector Extensions
 
 ```cs
 // Simple Vector to VectorInt conversions
@@ -171,7 +171,7 @@ myVector.InvertX(); // returns Vector2(-1f, 1f);
 myVector.InvertY(); // returns Vector2(1f, -1f);
 ```
 
-# Color extensions
+## Color extensions
 
 ```c#
 
@@ -185,7 +185,7 @@ color.SetNoAlpha();
 
 ```
 
-# With Extensions
+## With Extensions
 
 ```c#
 
@@ -198,9 +198,7 @@ Instantiate(newObject)
     .With(x => x.transform.localScale = Vector3.one, someValue > 10);  // or add condition with some expression
 
 ```
-## Special Attributes
-
-### AllowNesting
+## AllowNesting
 This attribute must be used in some cases when you want meta attributes to work inside serializable nested structs or classes.
 You can check in which cases you need to use it [here](https://dbrizov.github.io/na-docs/attributes/special_attributes/allow_nesting.html).
 
@@ -221,7 +219,7 @@ public struct MyStruct
 }
 ```
 
-### Dropdown
+## Dropdown
 Provides an interface for dropdown value selection.
 
 ```csharp
@@ -257,7 +255,7 @@ public class NaughtyComponent : MonoBehaviour
 
 ![inspector](https://github.com/dbrizov/NaughtyAttributes/blob/master/Assets/NaughtyAttributes/Documentation~/Dropdown_Inspector.gif)
 
-### EnumFlags
+## EnumFlags
 Provides dropdown interface for setting enum flags.
 
 ```csharp
@@ -279,7 +277,7 @@ public class NaughtyComponent : MonoBehaviour
 
 ![inspector](https://github.com/dbrizov/NaughtyAttributes/blob/master/Assets/NaughtyAttributes/Documentation~/EnumFlags_Inspector.png)
 
-### Expandable
+## Expandable
 Make scriptable objects expandable.
 
 ```csharp
@@ -293,7 +291,7 @@ public class NaughtyComponent : MonoBehaviour
 ![inspector](https://github.com/dbrizov/NaughtyAttributes/blob/master/Assets/NaughtyAttributes/Documentation~/Expandable_Inspector.png)
 
 
-### InfoBox
+## InfoBox
 Used for providing additional information.
 
 ```csharp
@@ -312,7 +310,7 @@ public class NaughtyComponent : MonoBehaviour
 
 ![inspector](https://github.com/dbrizov/NaughtyAttributes/blob/master/Assets/NaughtyAttributes/Documentation~/InfoBox_Inspector.png)
 
-### InputAxis
+## InputAxis
 Select an input axis via dropdown interface.
 
 ```csharp
@@ -325,7 +323,7 @@ public class NaughtyComponent : MonoBehaviour
 
 ![inspector](https://github.com/dbrizov/NaughtyAttributes/blob/master/Assets/NaughtyAttributes/Documentation~/InputAxis_Inspector.png)
 
-### Layer
+## Layer
 Select a layer via dropdown interface.
 
 ```csharp
@@ -343,7 +341,7 @@ public class NaughtyComponent : MonoBehaviour
 
 
 
-### ResizableTextArea
+## ResizableTextArea
 A resizable text area where you can see the whole text.
 Unlike Unity's **Multiline** and **TextArea** attributes where you can see only 3 rows of a given text, and in order to see it or modify it you have to manually scroll down to the desired row.
 
@@ -358,7 +356,7 @@ public class NaughtyComponent : MonoBehaviour
 ![inspector](https://github.com/dbrizov/NaughtyAttributes/blob/master/Assets/NaughtyAttributes/Documentation~/ResizableTextArea_Inspector.gif)
 
 
-### ShowAssetPreview
+## ShowAssetPreview
 Shows the texture preview of a given asset (Sprite, Prefab...).
 
 ```csharp
@@ -375,7 +373,7 @@ public class NaughtyComponent : MonoBehaviour
 ![inspector](https://github.com/dbrizov/NaughtyAttributes/blob/master/Assets/NaughtyAttributes/Documentation~/ShowAssetPreview_Inspector.png)
 
 
-### SortingLayer
+## SortingLayer
 Select a sorting layer via dropdown interface.
 
 ```csharp
@@ -391,7 +389,7 @@ public class NaughtyComponent : MonoBehaviour
 
 ![inspector](https://github.com/dbrizov/NaughtyAttributes/blob/master/Assets/NaughtyAttributes/Documentation~/SortingLayer_Inspector.png)
 
-### Tag
+## Tag
 Select a tag via dropdown interface.
 
 ```csharp
@@ -405,7 +403,7 @@ public class NaughtyComponent : MonoBehaviour
 ![inspector](https://github.com/dbrizov/NaughtyAttributes/blob/master/Assets/NaughtyAttributes/Documentation~/Tag_Inspector.png)
 
 
-### EnableIf / DisableIf
+## EnableIf / DisableIf
 ```csharp
 public class NaughtyComponent : MonoBehaviour
 {
@@ -444,7 +442,7 @@ public class NaughtyComponent : MonoBehaviour
 }
 ```
 
-### ShowIf / HideIf
+## ShowIf / HideIf
 ```csharp
 public class NaughtyComponent : MonoBehaviour
 {
@@ -483,7 +481,7 @@ public class NaughtyComponent : MonoBehaviour
 }
 ```
 
-### Label
+## Label
 Override default field label.
 
 ```csharp
@@ -499,7 +497,7 @@ public class NaughtyComponent : MonoBehaviour
 
 ![inspector](https://github.com/dbrizov/NaughtyAttributes/blob/master/Assets/NaughtyAttributes/Documentation~/Label_Inspector.png)
 
-### OnValueChanged
+## OnValueChanged
 Detects a value change and executes a callback.
 Keep in mind that the event is detected only when the value is changed from the inspector.
 If you want a runtime event, you should probably use an event/delegate and subscribe to it.
@@ -517,7 +515,7 @@ public class NaughtyComponent : MonoBehaviour
 }
 ```
 
-### MinValue / MaxValue
+## MinValue / MaxValue
 Clamps integer and float fields.
 
 ```csharp
