@@ -3,7 +3,7 @@
 - Use RDTools nameSpace and periodically update the package 🙂
 - Actual version - 1.0.0
 - Minimal Unity version - 2020.2
-- 
+
 (some assets were taken from this asset (https://github.com/dbrizov/NaughtyAttributes) and have been modified according to the Mit license )
 
 # Play audio in inspector 
