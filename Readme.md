@@ -164,7 +164,7 @@ color.SetNoAlpha();
 
 ```
 
-# With Extentions
+# With Extensions
 
 ```c#
 
