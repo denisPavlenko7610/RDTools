@@ -2,11 +2,32 @@
 
 - Use RDTools nameSpace and periodically update the package 🙂
 - Actual version - 1.0.0
+- Minimal Unity version - 2020.2
+
+(some assets were taken from these repositories (https://github.com/baba-s/awesome-unity-open-source-on-github) and have been seriously modified according to the Mit or Apache 2.0 licenses)
 
 # Play audio in inspector 
 (by default)
 
 ![image](https://user-images.githubusercontent.com/13468920/201512579-c8a206aa-1150-4b0f-88c7-61438aea7ef2.png)
+
+
+Add scene links (by default)
+===========
+
+Extension for Unity that allows directly assigning scenes in the Inspector.
+
+```c#
+
+[SerializeField] private Scene _scene;
+    
+```
+At runtime, you can access the build index of the scene using the `Scene.BuildIndex` property:
+```c#
+
+SceneManager.LoadScene(scene.BuildIndex);
+
+```
 
 # Button
 
@@ -163,7 +184,7 @@ color.SetNoAlpha();
 
 ```
 
-# With Extentions
+# With Extensions
 
 ```c#
 
@@ -177,19 +198,4 @@ Instantiate(newObject)
 
 ```
 
-Scene Attribute
-===========
 
-Extension for Unity that allows directly assigning scenes in the Inspector.
-
-```c#
-
-[SerializeField] private Scene _scene;
-    
-```
-At runtime, you can access the build index of the scene using the `Scene.BuildIndex` property:
-```c#
-
-SceneManager.LoadScene(scene.BuildIndex);
-
-```
