@@ -11,6 +11,24 @@
 
 ![image](https://user-images.githubusercontent.com/13468920/201512579-c8a206aa-1150-4b0f-88c7-61438aea7ef2.png)
 
+
+Add scene links (by default)
+===========
+
+Extension for Unity that allows directly assigning scenes in the Inspector.
+
+```c#
+
+[SerializeField] private Scene _scene;
+    
+```
+At runtime, you can access the build index of the scene using the `Scene.BuildIndex` property:
+```c#
+
+SceneManager.LoadScene(scene.BuildIndex);
+
+```
+
 # Button
 
 - Add Button attribute for methods to create button
@@ -180,19 +198,4 @@ Instantiate(newObject)
 
 ```
 
-Scene Attribute
-===========
 
-Extension for Unity that allows directly assigning scenes in the Inspector.
-
-```c#
-
-[SerializeField] private Scene _scene;
-    
-```
-At runtime, you can access the build index of the scene using the `Scene.BuildIndex` property:
-```c#
-
-SceneManager.LoadScene(scene.BuildIndex);
-
-```
