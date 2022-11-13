@@ -2,6 +2,7 @@
 
 - Use RDTools nameSpace and periodically update the package 🙂
 - Actual version - 1.0.0
+- Minimal Unity version - 2020.2
 
 # Play audio in inspector 
 (by default)
