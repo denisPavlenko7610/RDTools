@@ -1,7 +1,7 @@
 # RDTools
 
 - Use RDTools nameSpace and periodically update the package 🙂
-- Actual version - 0.0.7
+- Actual version - 0.0.8
 
 # Play audio in inspector 
 (by default)
@@ -102,6 +102,8 @@ When attempting to save a Vector3 variable's value (or a Quaternion for that mat
 
 ```c#
 gameObject.GetOrAddComponent<Rigidbody>();
+
+gameObject.SetParent(newObject);
 ```
 # List extensions
 ```c#
@@ -133,6 +135,20 @@ color.SetFullAlpha();
 color.SetAlpha(0.5f);
 
 color.SetNoAlpha();
+
+```
+
+# With Extentions
+
+```c#
+
+bool isTrue = true;
+int someValue = 20;
+
+Instantiate(newObject)
+    .With(x => x.transform.localPosition = Vector3.zero)  // add chain to set some params
+    .With(x => x.transform.rotation = Quaternion.Euler(0, 90, 0), isTrue)  // add condition value with some bool param
+    .With(x => x.transform.localScale = Vector3.one, someValue > 10);  // or add condition with some expression
 
 ```
 
