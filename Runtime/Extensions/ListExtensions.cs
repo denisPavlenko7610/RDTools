@@ -30,6 +30,8 @@ namespace RDTools.Extensions
             }
         }
 
+        public static bool IsNullOrEmpty(this IList list) => list == null || list.Count == 0;
+
         public static bool IsNullOrEmpty<T>(this IList<T> list) => list == null || list.Count == 0;
     }
 }
