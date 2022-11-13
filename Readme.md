@@ -84,8 +84,6 @@ Examples:
     }
 ```
 
-# Extensions and utilities
-===========
 
 # Serialized vectors, quaternions
 
