@@ -1,7 +1,7 @@
 # RDTools
 
 - Use RDTools nameSpace and periodically update the package 🙂
-- Actual version - 0.0.7
+- Actual version - 0.0.8
 
 # Play audio in inspector 
 (by default)
@@ -102,6 +102,8 @@ When attempting to save a Vector3 variable's value (or a Quaternion for that mat
 
 ```c#
 gameObject.GetOrAddComponent<Rigidbody>();
+
+gameObject.SetParent(newObject);
 ```
 # List extensions
 ```c#
