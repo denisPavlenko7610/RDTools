@@ -4,7 +4,7 @@
 - Actual version - 1.0.0
 - Minimal Unity version - 2020.2
 
-(some assets were taken from this asset (https://github.com/baba-s/awesome-unity-open-source-on-github) and have been modified according to the Mit or Apache 2.0 license)
+(some assets were taken from these repositories (https://github.com/baba-s/awesome-unity-open-source-on-github) and have been modified according to the Mit or Apache 2.0 license)
 
 # Play audio in inspector 
 (by default)
