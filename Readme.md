@@ -254,25 +254,6 @@ private DropdownList<Vector3> GetVectorValues()
 
 ```
 
-## EnumFlags
-Provides dropdown interface for setting enum flags.
-
-```csharp
-public enum Direction
-{
-	None = 0,
-	Right = 1 << 0,
-	Left = 1 << 1,
-	Up = 1 << 2,
-	Down = 1 << 3
-}
-
-
-[EnumFlags]
-public Direction flags;
-
-```
-
 ## Expandable
 Make scriptable objects expandable.
 
