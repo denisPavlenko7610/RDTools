@@ -2,6 +2,9 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://github.com/denisPavlenko7610/RDTools/blob/master/LICENSE.md)
 
 - Use RDTools nameSpace and periodically update the package 🙂
+
+(Recommended to use only for your own projects)
+
 - Actual version - 1.1.0
 - Minimal Unity version - 2020.2
 
