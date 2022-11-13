@@ -147,8 +147,8 @@ int someValue = 20;
 
 Instantiate(newObject)
     .With(x => x.transform.localPosition = Vector3.zero)  // add chain to set some params
-    .With(x => x.transform.rotation = Quaternion.Euler(0, 90, 0), isTrue)  // add condition value with bool
-    .With(x => x.transform.localScale = Vector3.one, someValue > 10);  // or add condition with some expretion
+    .With(x => x.transform.rotation = Quaternion.Euler(0, 90, 0), isTrue)  // add condition value with some bool param
+    .With(x => x.transform.localScale = Vector3.one, someValue > 10);  // or add condition with some expression
 
 ```
 
