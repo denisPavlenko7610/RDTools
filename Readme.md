@@ -1,6 +1,6 @@
 # RDTools
 
-- Use RDTools nameSpace and periodically update the package :)
+- Use RDTools nameSpace and periodically update the package 🙂
 
 # Play audio in inspector 
 (by default)
