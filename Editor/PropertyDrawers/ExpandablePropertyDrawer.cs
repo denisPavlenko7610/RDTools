@@ -24,41 +24,48 @@ namespace RDTools.Editor
 
                 if (property.isExpanded)
                 {
-                    using SerializedObject serializedObject = new SerializedObject(scriptableObject);
-                    float totalHeight = EditorGUIUtility.singleLineHeight;
-
-                    using (var iterator = serializedObject.GetIterator())
+                    using (SerializedObject serializedObject = new SerializedObject(scriptableObject))
                     {
-                        if (iterator.NextVisible(true))
+                        float totalHeight = EditorGUIUtility.singleLineHeight;
+
+                        using (var iterator = serializedObject.GetIterator())
                         {
-                            do
+                            if (iterator.NextVisible(true))
                             {
-                                SerializedProperty childProperty = serializedObject.FindProperty(iterator.name);
-                                if (childProperty.name.Equals("m_Script", System.StringComparison.Ordinal))
+                                do
                                 {
-                                    continue;
-                                }
+                                    SerializedProperty childProperty = serializedObject.FindProperty(iterator.name);
+                                    if (childProperty.name.Equals("m_Script", System.StringComparison.Ordinal))
+                                    {
+                                        continue;
+                                    }
 
-                                bool visible = PropertyUtility.IsVisible(childProperty);
-                                if (!visible)
-                                {
-                                    continue;
-                                }
+                                    bool visible = PropertyUtility.IsVisible(childProperty);
+                                    if (!visible)
+                                    {
+                                        continue;
+                                    }
 
-                                float height = GetPropertyHeight(childProperty);
-                                totalHeight += height;
-                            } while (iterator.NextVisible(false));
+                                    float height = GetPropertyHeight(childProperty);
+                                    totalHeight += height;
+                                }
+                                while (iterator.NextVisible(false));
+                            }
                         }
+
+                        totalHeight += EditorGUIUtility.standardVerticalSpacing;
+                        return totalHeight;
                     }
-
-                    totalHeight += EditorGUIUtility.standardVerticalSpacing;
-                    return totalHeight;
                 }
-
-                return GetPropertyHeight(property);
+                else
+                {
+                    return GetPropertyHeight(property);
+                }
             }
-
-            return GetPropertyHeight(property) + GetHelpBoxHeight();
+            else
+            {
+                return GetPropertyHeight(property) + GetHelpBoxHeight();
+            }
         }
 
         protected override void OnGUI_Internal(Rect rect, SerializedProperty property, GUIContent label)
@@ -90,8 +97,7 @@ namespace RDTools.Editor
                             height = EditorGUIUtility.singleLineHeight
                         };
 
-                        property.isExpanded = EditorGUI.Foldout(foldoutRect, property.isExpanded, label,
-                            toggleOnLabelClick: true);
+                        property.isExpanded = EditorGUI.Foldout(foldoutRect, property.isExpanded, label, toggleOnLabelClick: true);
 
                         // Draw the scriptable object field
                         Rect propertyRect = new Rect()
@@ -140,45 +146,50 @@ namespace RDTools.Editor
 
             GUI.Box(boxRect, GUIContent.none);
 
-            using var scope = new EditorGUI.IndentLevelScope();
-            SerializedObject serializedObject = new SerializedObject(scriptableObject);
-            serializedObject.Update();
-
-            using var iterator = serializedObject.GetIterator();
-            float yOffset = EditorGUIUtility.singleLineHeight;
-
-            if (iterator.NextVisible(true))
+            using (new EditorGUI.IndentLevelScope())
             {
-                do
+                SerializedObject serializedObject = new SerializedObject(scriptableObject);
+                serializedObject.Update();
+
+                using (var iterator = serializedObject.GetIterator())
                 {
-                    SerializedProperty childProperty = serializedObject.FindProperty(iterator.name);
-                    if (childProperty.name.Equals("m_Script", System.StringComparison.Ordinal))
+                    float yOffset = EditorGUIUtility.singleLineHeight;
+
+                    if (iterator.NextVisible(true))
                     {
-                        continue;
+                        do
+                        {
+                            SerializedProperty childProperty = serializedObject.FindProperty(iterator.name);
+                            if (childProperty.name.Equals("m_Script", System.StringComparison.Ordinal))
+                            {
+                                continue;
+                            }
+
+                            bool visible = PropertyUtility.IsVisible(childProperty);
+                            if (!visible)
+                            {
+                                continue;
+                            }
+
+                            float childHeight = GetPropertyHeight(childProperty);
+                            Rect childRect = new Rect()
+                            {
+                                x = rect.x,
+                                y = rect.y + yOffset,
+                                width = rect.width,
+                                height = childHeight
+                            };
+
+                            RDEditorGUI.PropertyField(childRect, childProperty, true);
+
+                            yOffset += childHeight;
+                        }
+                        while (iterator.NextVisible(false));
                     }
+                }
 
-                    bool visible = PropertyUtility.IsVisible(childProperty);
-                    if (!visible)
-                    {
-                        continue;
-                    }
-
-                    float childHeight = GetPropertyHeight(childProperty);
-                    Rect childRect = new Rect()
-                    {
-                        x = rect.x,
-                        y = rect.y + yOffset,
-                        width = rect.width,
-                        height = childHeight
-                    };
-
-                    RDEditorGUI.PropertyField(childRect, childProperty, true);
-
-                    yOffset += childHeight;
-                } while (iterator.NextVisible(false));
+                serializedObject.ApplyModifiedProperties();
             }
-
-            serializedObject.ApplyModifiedProperties();
         }
     }
 }

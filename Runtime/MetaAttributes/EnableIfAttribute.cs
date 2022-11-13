@@ -11,8 +11,8 @@ namespace RDTools
             Inverted = false;
         }
 
-        public EnableIfAttribute(EConditionOperator eConditionOperator, params string[] conditions)
-            : base(eConditionOperator, conditions)
+        public EnableIfAttribute(EConditionOperator conditionOperator, params string[] conditions)
+            : base(conditionOperator, conditions)
         {
             Inverted = false;
         }

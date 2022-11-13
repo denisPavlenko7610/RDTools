@@ -50,13 +50,14 @@ namespace RDTools.Editor
             return GetPropertyHeight_Internal(property, label);
         }
 
-        protected virtual float GetPropertyHeight_Internal(SerializedProperty property, GUIContent label) =>
-            EditorGUI.GetPropertyHeight(property, includeChildren: true);
+        protected virtual float GetPropertyHeight_Internal(SerializedProperty property, GUIContent label)
+        {
+            return EditorGUI.GetPropertyHeight(property, includeChildren: true);
+        }
 
         protected float GetPropertyHeight(SerializedProperty property)
         {
-            SpecialCaseDrawerAttribute specialCaseAttribute =
-                PropertyUtility.GetAttribute<SpecialCaseDrawerAttribute>(property);
+            SpecialCaseDrawerAttribute specialCaseAttribute = PropertyUtility.GetAttribute<SpecialCaseDrawerAttribute>(property);
             if (specialCaseAttribute != null)
             {
                 return specialCaseAttribute.GetDrawer().GetPropertyHeight(property);
@@ -65,10 +66,12 @@ namespace RDTools.Editor
             return EditorGUI.GetPropertyHeight(property, includeChildren: true);
         }
 
-        public virtual float GetHelpBoxHeight() => EditorGUIUtility.singleLineHeight * 2.0f;
+        public virtual float GetHelpBoxHeight()
+        {
+            return EditorGUIUtility.singleLineHeight * 2.0f;
+        }
 
-        public void DrawDefaultPropertyAndHelpBox(Rect rect, SerializedProperty property, string message,
-            MessageType messageType)
+        public void DrawDefaultPropertyAndHelpBox(Rect rect, SerializedProperty property, string message, MessageType messageType)
         {
             float indentLength = RDEditorGUI.GetIndentLength(rect);
             Rect helpBoxRect = new Rect(
@@ -77,8 +80,7 @@ namespace RDTools.Editor
                 rect.width - indentLength,
                 GetHelpBoxHeight());
 
-            RDEditorGUI.HelpBox(helpBoxRect, message, MessageType.Warning,
-                context: property.serializedObject.targetObject);
+            RDEditorGUI.HelpBox(helpBoxRect, message, MessageType.Warning, context: property.serializedObject.targetObject);
 
             Rect propertyRect = new Rect(
                 rect.x,

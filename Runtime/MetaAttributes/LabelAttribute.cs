@@ -7,6 +7,9 @@ namespace RDTools
     {
         public string Label { get; private set; }
 
-        public LabelAttribute(string label) => Label = label;
+        public LabelAttribute(string label)
+        {
+            Label = label;
+        }
     }
 }

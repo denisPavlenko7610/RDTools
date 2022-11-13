@@ -16,8 +16,10 @@ namespace RDTools.Editor
                 float textAreaHeight = GetTextAreaHeight(property.stringValue);
                 return labelHeight + textAreaHeight;
             }
-
-            return GetPropertyHeight(property) + GetHelpBoxHeight();
+            else
+            {
+                return GetPropertyHeight(property) + GetHelpBoxHeight();
+            }
         }
 
         protected override void OnGUI_Internal(Rect rect, SerializedProperty property, GUIContent label)

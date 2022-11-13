@@ -5,7 +5,7 @@ namespace RDTools
     public abstract class EnableIfAttributeBase : MetaAttribute
     {
         public string[] Conditions { get; private set; }
-        public EConditionOperator EConditionOperator { get; private set; }
+        public EConditionOperator ConditionOperator { get; private set; }
         public bool Inverted { get; protected set; }
 
         /// <summary>
@@ -15,13 +15,13 @@ namespace RDTools
 
         public EnableIfAttributeBase(string condition)
         {
-            EConditionOperator = EConditionOperator.And;
+            ConditionOperator = EConditionOperator.And;
             Conditions = new string[1] { condition };
         }
 
-        public EnableIfAttributeBase(EConditionOperator eConditionOperator, params string[] conditions)
+        public EnableIfAttributeBase(EConditionOperator conditionOperator, params string[] conditions)
         {
-            EConditionOperator = eConditionOperator;
+            ConditionOperator = conditionOperator;
             Conditions = conditions;
         }
 

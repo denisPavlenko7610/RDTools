@@ -70,6 +70,12 @@ namespace RDTools.Editor
 
         public static bool IsEnabled(SerializedProperty property)
         {
+            ReadOnlyAttribute readOnlyAttribute = GetAttribute<ReadOnlyAttribute>(property);
+            if (readOnlyAttribute != null)
+            {
+                return false;
+            }
+
             EnableIfAttributeBase enableIfAttribute = GetAttribute<EnableIfAttributeBase>(property);
             if (enableIfAttribute == null)
             {
@@ -101,7 +107,7 @@ namespace RDTools.Editor
             List<bool> conditionValues = GetConditionValues(target, enableIfAttribute.Conditions);
             if (conditionValues.Count > 0)
             {
-                bool enabled = GetConditionsFlag(conditionValues, enableIfAttribute.EConditionOperator, enableIfAttribute.Inverted);
+                bool enabled = GetConditionsFlag(conditionValues, enableIfAttribute.ConditionOperator, enableIfAttribute.Inverted);
                 return enabled;
             }
             else
@@ -146,7 +152,7 @@ namespace RDTools.Editor
             List<bool> conditionValues = GetConditionValues(target, showIfAttribute.Conditions);
             if (conditionValues.Count > 0)
             {
-                bool enabled = GetConditionsFlag(conditionValues, showIfAttribute.EConditionOperator, showIfAttribute.Inverted);
+                bool enabled = GetConditionsFlag(conditionValues, showIfAttribute.ConditionOperator, showIfAttribute.Inverted);
                 return enabled;
             }
             else
@@ -218,10 +224,10 @@ namespace RDTools.Editor
             return conditionValues;
         }
 
-        internal static bool GetConditionsFlag(List<bool> conditionValues, EConditionOperator eConditionOperator, bool invert)
+        internal static bool GetConditionsFlag(List<bool> conditionValues, EConditionOperator conditionOperator, bool invert)
         {
             bool flag;
-            if (eConditionOperator == EConditionOperator.And)
+            if (conditionOperator == EConditionOperator.And)
             {
                 flag = true;
                 foreach (var value in conditionValues)

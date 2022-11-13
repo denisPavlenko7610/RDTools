@@ -15,11 +15,15 @@ namespace RDTools.Editor
                 {
                     return GetPropertyHeight(property) + GetAssetPreviewSize(property).y;
                 }
-
-                return GetPropertyHeight(property);
+                else
+                {
+                    return GetPropertyHeight(property);
+                }
             }
-
-            return GetPropertyHeight(property) + GetHelpBoxHeight();
+            else
+            {
+                return GetPropertyHeight(property) + GetHelpBoxHeight();
+            }
         }
 
         protected override void OnGUI_Internal(Rect rect, SerializedProperty property, GUIContent label)
@@ -84,22 +88,23 @@ namespace RDTools.Editor
             {
                 return Vector2.zero;
             }
-
-            int targetWidth = ShowAssetPreviewAttribute.DefaultWidth;
-            int targetHeight = ShowAssetPreviewAttribute.DefaultHeight;
-
-            ShowAssetPreviewAttribute showAssetPreviewAttribute =
-                PropertyUtility.GetAttribute<ShowAssetPreviewAttribute>(property);
-            if (showAssetPreviewAttribute != null)
+            else
             {
-                targetWidth = showAssetPreviewAttribute.Width;
-                targetHeight = showAssetPreviewAttribute.Height;
+                int targetWidth = ShowAssetPreviewAttribute.DefaultWidth;
+                int targetHeight = ShowAssetPreviewAttribute.DefaultHeight;
+
+                ShowAssetPreviewAttribute showAssetPreviewAttribute = PropertyUtility.GetAttribute<ShowAssetPreviewAttribute>(property);
+                if (showAssetPreviewAttribute != null)
+                {
+                    targetWidth = showAssetPreviewAttribute.Width;
+                    targetHeight = showAssetPreviewAttribute.Height;
+                }
+
+                int width = Mathf.Clamp(targetWidth, 0, previewTexture.width);
+                int height = Mathf.Clamp(targetHeight, 0, previewTexture.height);
+
+                return new Vector2(width, height);
             }
-
-            int width = Mathf.Clamp(targetWidth, 0, previewTexture.width);
-            int height = Mathf.Clamp(targetHeight, 0, previewTexture.height);
-
-            return new Vector2(width, height);
         }
     }
 }

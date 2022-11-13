@@ -7,8 +7,14 @@ namespace RDTools
     {
         public float MaxValue { get; private set; }
 
-        public MaxValueAttribute(float maxValue) => MaxValue = maxValue;
+        public MaxValueAttribute(float maxValue)
+        {
+            MaxValue = maxValue;
+        }
 
-        public MaxValueAttribute(int maxValue) => MaxValue = maxValue;
+        public MaxValueAttribute(int maxValue)
+        {
+            MaxValue = maxValue;
+        }
     }
 }

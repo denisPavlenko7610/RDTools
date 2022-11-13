@@ -18,7 +18,7 @@ namespace RDTools.Editor
         {
             GetSerializedProperties(ref _serializedProperties);
 
-            bool anyNaughtyAttribute = _serializedProperties.Any(p => PropertyUtility.GetAttribute<IAttribute>(p) != null);
+            bool anyNaughtyAttribute = _serializedProperties.Any(p => PropertyUtility.GetAttribute<IRDAttribute>(p) != null);
             if (!anyNaughtyAttribute)
             {
                 DrawDefaultInspector();
@@ -64,7 +64,7 @@ namespace RDTools.Editor
                     RDEditorGUI.PropertyField_Layout(property, includeChildren: true);
                 }
             }
-
+            
             serializedObject.ApplyModifiedProperties();
         }
 

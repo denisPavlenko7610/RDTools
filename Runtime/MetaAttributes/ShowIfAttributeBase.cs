@@ -5,7 +5,7 @@ namespace RDTools
     public class ShowIfAttributeBase : MetaAttribute
     {
         public string[] Conditions { get; private set; }
-        public EConditionOperator EConditionOperator { get; private set; }
+        public EConditionOperator ConditionOperator { get; private set; }
         public bool Inverted { get; protected set; }
 
         /// <summary>
@@ -15,20 +15,25 @@ namespace RDTools
 
         public ShowIfAttributeBase(string condition)
         {
-            EConditionOperator = EConditionOperator.And;
+            ConditionOperator = EConditionOperator.And;
             Conditions = new string[1] { condition };
         }
 
-        public ShowIfAttributeBase(EConditionOperator eConditionOperator, params string[] conditions)
+        public ShowIfAttributeBase(EConditionOperator conditionOperator, params string[] conditions)
         {
-            EConditionOperator = eConditionOperator;
+            ConditionOperator = conditionOperator;
             Conditions = conditions;
         }
 
         public ShowIfAttributeBase(string enumName, Enum enumValue)
             : this(enumName)
         {
-            EnumValue = enumValue ?? throw new ArgumentNullException(nameof(enumValue), "This parameter must be an enum value.");
+            if (enumValue == null)
+            {
+                throw new ArgumentNullException(nameof(enumValue), "This parameter must be an enum value.");
+            }
+
+            EnumValue = enumValue;
         }
     }
 }

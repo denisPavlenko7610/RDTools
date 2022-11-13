@@ -11,8 +11,8 @@ namespace RDTools
             Inverted = true;
         }
 
-        public HideIfAttribute(EConditionOperator eConditionOperator, params string[] conditions)
-            : base(eConditionOperator, conditions)
+        public HideIfAttribute(EConditionOperator conditionOperator, params string[] conditions)
+            : base(conditionOperator, conditions)
         {
             Inverted = true;
         }

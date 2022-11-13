@@ -18,7 +18,7 @@ namespace RDTools
         Violet
     }
 
-    public static class ColorExtensions
+    public static class EColorExtensions
     {
         public static Color GetColor(this EColor color)
         {

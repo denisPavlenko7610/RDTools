@@ -6,7 +6,10 @@ namespace RDTools.Editor
     [CustomPropertyDrawer(typeof(InfoBoxAttribute))]
     public class InfoBoxDecoratorDrawer : DecoratorDrawer
     {
-        public override float GetHeight() => GetHelpBoxHeight();
+        public override float GetHeight()
+        {
+            return GetHelpBoxHeight();
+        }
 
         public override void OnGUI(Rect rect)
         {
@@ -34,13 +37,21 @@ namespace RDTools.Editor
 
         private void DrawInfoBox(Rect rect, string infoText, EInfoBoxType infoBoxType)
         {
-            MessageType messageType = infoBoxType switch
+            MessageType messageType = MessageType.None;
+            switch (infoBoxType)
             {
-                EInfoBoxType.Normal => MessageType.Info,
-                EInfoBoxType.Warning => MessageType.Warning,
-                EInfoBoxType.Error => MessageType.Error,
-                _ => MessageType.None
-            };
+                case EInfoBoxType.Normal:
+                    messageType = MessageType.Info;
+                    break;
+
+                case EInfoBoxType.Warning:
+                    messageType = MessageType.Warning;
+                    break;
+
+                case EInfoBoxType.Error:
+                    messageType = MessageType.Error;
+                    break;
+            }
 
             RDEditorGUI.HelpBox(rect, infoText, messageType);
         }

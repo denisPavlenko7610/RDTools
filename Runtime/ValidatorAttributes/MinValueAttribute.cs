@@ -7,8 +7,14 @@ namespace RDTools
     {
         public float MinValue { get; private set; }
 
-        public MinValueAttribute(float minValue) => MinValue = minValue;
+        public MinValueAttribute(float minValue)
+        {
+            MinValue = minValue;
+        }
 
-        public MinValueAttribute(int minValue) => MinValue = minValue;
+        public MinValueAttribute(int minValue)
+        {
+            MinValue = minValue;
+        }
     }
 }

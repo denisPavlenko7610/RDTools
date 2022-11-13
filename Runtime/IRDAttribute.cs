@@ -1,6 +1,6 @@
 ﻿namespace RDTools
 {
-    public interface IAttribute
+    public interface IRDAttribute
     {
     }
 }

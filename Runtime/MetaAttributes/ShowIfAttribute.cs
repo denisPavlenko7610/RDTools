@@ -6,15 +6,21 @@ namespace RDTools
     public class ShowIfAttribute : ShowIfAttributeBase
     {
         public ShowIfAttribute(string condition)
-            : base(condition) =>
+            : base(condition)
+        {
             Inverted = false;
+        }
 
-        public ShowIfAttribute(EConditionOperator eConditionOperator, params string[] conditions)
-            : base(eConditionOperator, conditions) =>
+        public ShowIfAttribute(EConditionOperator conditionOperator, params string[] conditions)
+            : base(conditionOperator, conditions)
+        {
             Inverted = false;
+        }
 
         public ShowIfAttribute(string enumName, object enumValue)
-            : base(enumName, enumValue as Enum) =>
+            : base(enumName, enumValue as Enum)
+        {
             Inverted = false;
+        }
     }
 }

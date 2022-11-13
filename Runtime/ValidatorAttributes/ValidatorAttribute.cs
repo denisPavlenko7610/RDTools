@@ -2,7 +2,7 @@
 
 namespace RDTools
 {
-    public class ValidatorAttribute : Attribute, IAttribute
+    public class ValidatorAttribute : Attribute, IRDAttribute
     {
     }
 }
