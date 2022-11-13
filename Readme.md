@@ -138,7 +138,7 @@ color.SetNoAlpha();
 Scene Attribute
 ===========
 
-Extension for Unity that allows directly assigning scenes in the Inspector. At runtime, the build index of the scene can be retrieved to, for example, load the scene, without hard-coding or maintaining a list of scene paths. Using this field, the scene info will always be updated even when changing its name, folder, or build index. It's as lightweight as possible, and uses a simple custom inspector:
+Extension for Unity that allows directly assigning scenes in the Inspector.
 
 ```c#
 
