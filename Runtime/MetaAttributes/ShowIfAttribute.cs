@@ -9,8 +9,8 @@ namespace RDTools
             : base(condition) =>
             Inverted = false;
 
-        public ShowIfAttribute(ConditionOperator conditionOperator, params string[] conditions)
-            : base(conditionOperator, conditions) =>
+        public ShowIfAttribute(EConditionOperator eConditionOperator, params string[] conditions)
+            : base(eConditionOperator, conditions) =>
             Inverted = false;
 
         public ShowIfAttribute(string enumName, object enumValue)

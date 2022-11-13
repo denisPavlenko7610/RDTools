@@ -5,7 +5,7 @@ namespace RDTools
     public class ShowIfAttributeBase : MetaAttribute
     {
         public string[] Conditions { get; private set; }
-        public ConditionOperator ConditionOperator { get; private set; }
+        public EConditionOperator EConditionOperator { get; private set; }
         public bool Inverted { get; protected set; }
 
         /// <summary>
@@ -15,13 +15,13 @@ namespace RDTools
 
         public ShowIfAttributeBase(string condition)
         {
-            ConditionOperator = ConditionOperator.And;
+            EConditionOperator = EConditionOperator.And;
             Conditions = new string[1] { condition };
         }
 
-        public ShowIfAttributeBase(ConditionOperator conditionOperator, params string[] conditions)
+        public ShowIfAttributeBase(EConditionOperator eConditionOperator, params string[] conditions)
         {
-            ConditionOperator = conditionOperator;
+            EConditionOperator = eConditionOperator;
             Conditions = conditions;
         }
 

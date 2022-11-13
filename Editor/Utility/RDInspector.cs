@@ -9,7 +9,7 @@ namespace RDTools.Editor
     [CustomEditor(typeof(UnityEngine.Object), true)]
     public class RDInspector : UnityEditor.Editor
     {
-        private List<SerializedProperty> _serializedProperties = new();
+        private List<SerializedProperty> _serializedProperties = new List<SerializedProperty>();
         private IEnumerable<FieldInfo> _nonSerializedFields;
         private IEnumerable<PropertyInfo> _nativeProperties;
         private IEnumerable<MethodInfo> _methods;
@@ -18,9 +18,7 @@ namespace RDTools.Editor
         {
             GetSerializedProperties(ref _serializedProperties);
 
-            bool anyNaughtyAttribute =
-                _serializedProperties.Any(p => PropertyUtility.GetAttribute<IAttribute>(p) != null);
-            
+            bool anyNaughtyAttribute = _serializedProperties.Any(p => PropertyUtility.GetAttribute<IAttribute>(p) != null);
             if (!anyNaughtyAttribute)
             {
                 DrawDefaultInspector();
@@ -41,7 +39,8 @@ namespace RDTools.Editor
                     do
                     {
                         outSerializedProperties.Add(serializedObject.FindProperty(iterator.name));
-                    } while (iterator.NextVisible(false));
+                    }
+                    while (iterator.NextVisible(false));
                 }
             }
         }
@@ -69,8 +68,9 @@ namespace RDTools.Editor
             serializedObject.ApplyModifiedProperties();
         }
 
-        private static IEnumerable<SerializedProperty> GetNonGroupedProperties(
-            IEnumerable<SerializedProperty> properties) =>
-            properties.Where(p => PropertyUtility.GetAttribute<IGroupAttribute>(p) == null);
+        private static IEnumerable<SerializedProperty> GetNonGroupedProperties(IEnumerable<SerializedProperty> properties)
+        {
+            return properties.Where(p => PropertyUtility.GetAttribute<IGroupAttribute>(p) == null);
+        }
     }
 }

@@ -77,11 +77,20 @@ namespace RDTools.Editor
             }
         }
 
-        public static FieldInfo GetField(object target, string fieldName) => GetAllFields(target, f => f.Name.Equals(fieldName, StringComparison.Ordinal)).FirstOrDefault();
+        public static FieldInfo GetField(object target, string fieldName)
+        {
+            return GetAllFields(target, f => f.Name.Equals(fieldName, StringComparison.Ordinal)).FirstOrDefault();
+        }
 
-        public static PropertyInfo GetProperty(object target, string propertyName) => GetAllProperties(target, p => p.Name.Equals(propertyName, StringComparison.Ordinal)).FirstOrDefault();
+        public static PropertyInfo GetProperty(object target, string propertyName)
+        {
+            return GetAllProperties(target, p => p.Name.Equals(propertyName, StringComparison.Ordinal)).FirstOrDefault();
+        }
 
-        public static MethodInfo GetMethod(object target, string methodName) => GetAllMethods(target, m => m.Name.Equals(methodName, StringComparison.Ordinal)).FirstOrDefault();
+        public static MethodInfo GetMethod(object target, string methodName)
+        {
+            return GetAllMethods(target, m => m.Name.Equals(methodName, StringComparison.Ordinal)).FirstOrDefault();
+        }
 
         public static Type GetListElementType(Type listType)
         {
@@ -89,14 +98,18 @@ namespace RDTools.Editor
             {
                 return listType.GetGenericArguments()[0];
             }
-            
-            return listType.GetElementType();
+            else
+            {
+                return listType.GetElementType();
+            }
         }
 
         /// <summary>
         ///		Get type and all base types of target, sorted as following:
-        ///		<param />[target's type, base type, base's base type, ...]
+        ///		<para />[target's type, base type, base's base type, ...]
         /// </summary>
+        /// <param name="target"></param>
+        /// <returns></returns>
         private static List<Type> GetSelfAndBaseTypes(object target)
         {
             List<Type> types = new List<Type>()

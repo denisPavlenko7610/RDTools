@@ -1,6 +1,6 @@
 namespace RDTools
 {
-    public enum ConditionOperator
+    public enum EConditionOperator
     {
         And,
         Or

@@ -101,7 +101,7 @@ namespace RDTools.Editor
             List<bool> conditionValues = GetConditionValues(target, enableIfAttribute.Conditions);
             if (conditionValues.Count > 0)
             {
-                bool enabled = GetConditionsFlag(conditionValues, enableIfAttribute.ConditionOperator, enableIfAttribute.Inverted);
+                bool enabled = GetConditionsFlag(conditionValues, enableIfAttribute.EConditionOperator, enableIfAttribute.Inverted);
                 return enabled;
             }
             else
@@ -146,7 +146,7 @@ namespace RDTools.Editor
             List<bool> conditionValues = GetConditionValues(target, showIfAttribute.Conditions);
             if (conditionValues.Count > 0)
             {
-                bool enabled = GetConditionsFlag(conditionValues, showIfAttribute.ConditionOperator, showIfAttribute.Inverted);
+                bool enabled = GetConditionsFlag(conditionValues, showIfAttribute.EConditionOperator, showIfAttribute.Inverted);
                 return enabled;
             }
             else
@@ -161,6 +161,9 @@ namespace RDTools.Editor
         /// <summary>
         ///		Gets an enum value from reflection.
         /// </summary>
+        /// <param name="target">The target object.</param>
+        /// <param name="enumName">Name of a field, property, or method that returns an enum.</param>
+        /// <returns>Null if can't find an enum value.</returns>
         internal static Enum GetEnumValue(object target, string enumName)
         {
             FieldInfo enumField = ReflectionUtility.GetField(target, enumName);
@@ -215,10 +218,10 @@ namespace RDTools.Editor
             return conditionValues;
         }
 
-        internal static bool GetConditionsFlag(List<bool> conditionValues, ConditionOperator conditionOperator, bool invert)
+        internal static bool GetConditionsFlag(List<bool> conditionValues, EConditionOperator eConditionOperator, bool invert)
         {
             bool flag;
-            if (conditionOperator == ConditionOperator.And)
+            if (eConditionOperator == EConditionOperator.And)
             {
                 flag = true;
                 foreach (var value in conditionValues)
@@ -254,6 +257,8 @@ namespace RDTools.Editor
         /// <summary>
         /// Gets the object the property represents.
         /// </summary>
+        /// <param name="property"></param>
+        /// <returns></returns>
         public static object GetTargetObjectOfProperty(SerializedProperty property)
         {
             if (property == null)
@@ -285,6 +290,8 @@ namespace RDTools.Editor
         /// <summary>
         /// Gets the object that the property is a member of
         /// </summary>
+        /// <param name="property"></param>
+        /// <returns></returns>
         public static object GetTargetObjectWithProperty(SerializedProperty property)
         {
             string path = property.propertyPath.Replace(".Array.data[", "[");
