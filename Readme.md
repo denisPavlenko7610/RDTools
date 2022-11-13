@@ -203,7 +203,6 @@ Instantiate(newObject)
 ```
 ## AllowNesting
 This attribute must be used in some cases when you want meta attributes to work inside serializable nested structs or classes.
-You can check in which cases you need to use it [here](https://dbrizov.github.io/na-docs/attributes/special_attributes/allow_nesting.html).
 
 ```csharp
 public class NaughtyComponent : MonoBehaviour
@@ -256,8 +255,6 @@ public class NaughtyComponent : MonoBehaviour
 }
 ```
 
-![inspector](https://github.com/dbrizov/NaughtyAttributes/blob/master/Assets/NaughtyAttributes/Documentation~/Dropdown_Inspector.gif)
-
 ## EnumFlags
 Provides dropdown interface for setting enum flags.
 
@@ -278,8 +275,6 @@ public class NaughtyComponent : MonoBehaviour
 }
 ```
 
-![inspector](https://github.com/dbrizov/NaughtyAttributes/blob/master/Assets/NaughtyAttributes/Documentation~/EnumFlags_Inspector.png)
-
 ## Expandable
 Make scriptable objects expandable.
 
@@ -290,8 +285,6 @@ public class NaughtyComponent : MonoBehaviour
 	public ScriptableObject scriptableObject;
 }
 ```
-
-![inspector](https://github.com/dbrizov/NaughtyAttributes/blob/master/Assets/NaughtyAttributes/Documentation~/Expandable_Inspector.png)
 
 
 ## InfoBox
@@ -311,7 +304,6 @@ public class NaughtyComponent : MonoBehaviour
 }
 ```
 
-![inspector](https://github.com/dbrizov/NaughtyAttributes/blob/master/Assets/NaughtyAttributes/Documentation~/InfoBox_Inspector.png)
 
 ## InputAxis
 Select an input axis via dropdown interface.
@@ -324,7 +316,6 @@ public class NaughtyComponent : MonoBehaviour
 }
 ```
 
-![inspector](https://github.com/dbrizov/NaughtyAttributes/blob/master/Assets/NaughtyAttributes/Documentation~/InputAxis_Inspector.png)
 
 ## Layer
 Select a layer via dropdown interface.
@@ -340,9 +331,6 @@ public class NaughtyComponent : MonoBehaviour
 }
 ```
 
-![inspector](https://github.com/dbrizov/NaughtyAttributes/blob/master/Assets/NaughtyAttributes/Documentation~/Layer_Inspector.png)
-
-
 
 ## ResizableTextArea
 A resizable text area where you can see the whole text.
@@ -355,8 +343,6 @@ public class NaughtyComponent : MonoBehaviour
 	public string resizableTextArea;
 }
 ```
-
-![inspector](https://github.com/dbrizov/NaughtyAttributes/blob/master/Assets/NaughtyAttributes/Documentation~/ResizableTextArea_Inspector.gif)
 
 
 ## ShowAssetPreview
@@ -373,8 +359,6 @@ public class NaughtyComponent : MonoBehaviour
 }
 ```
 
-![inspector](https://github.com/dbrizov/NaughtyAttributes/blob/master/Assets/NaughtyAttributes/Documentation~/ShowAssetPreview_Inspector.png)
-
 
 ## SortingLayer
 Select a sorting layer via dropdown interface.
@@ -390,8 +374,6 @@ public class NaughtyComponent : MonoBehaviour
 }
 ```
 
-![inspector](https://github.com/dbrizov/NaughtyAttributes/blob/master/Assets/NaughtyAttributes/Documentation~/SortingLayer_Inspector.png)
-
 ## Tag
 Select a tag via dropdown interface.
 
@@ -402,8 +384,6 @@ public class NaughtyComponent : MonoBehaviour
 	public string tagField;
 }
 ```
-
-![inspector](https://github.com/dbrizov/NaughtyAttributes/blob/master/Assets/NaughtyAttributes/Documentation~/Tag_Inspector.png)
 
 
 ## EnableIf / DisableIf
@@ -426,8 +406,6 @@ public class NaughtyComponent : MonoBehaviour
 	public bool NotEnabled => false;
 }
 ```
-
-![inspector](https://github.com/dbrizov/NaughtyAttributes/blob/master/Assets/NaughtyAttributes/Documentation~/EnableIf_Inspector.gif)
 
 You can have more than one condition.
 
@@ -466,8 +444,6 @@ public class NaughtyComponent : MonoBehaviour
 }
 ```
 
-![inspector](https://github.com/dbrizov/NaughtyAttributes/blob/master/Assets/NaughtyAttributes/Documentation~/ShowIf_Inspector.gif)
-
 You can have more than one condition.
 
 ```csharp
@@ -497,8 +473,6 @@ public class NaughtyComponent : MonoBehaviour
 	public Vector3 vectorXYZ;
 }
 ```
-
-![inspector](https://github.com/dbrizov/NaughtyAttributes/blob/master/Assets/NaughtyAttributes/Documentation~/Label_Inspector.png)
 
 ## OnValueChanged
 Detects a value change and executes a callback.
@@ -532,6 +506,5 @@ public class NaughtyComponent : MonoBehaviour
 }
 ```
 
-![inspector](https://github.com/dbrizov/NaughtyAttributes/blob/master/Assets/NaughtyAttributes/Documentation~/MinValueMaxValue_Inspector.gif)
 
 
