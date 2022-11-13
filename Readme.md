@@ -13,22 +13,14 @@
 - Add Button attribute for methods to create button
 ```c#
 [Button]
-public void DoSomething()
-{
-    Debug.Log("add params");
-}
+public void DoSomething() => Debug.Log("add params");
     
 [Button("Add Params")] //add some name
-private void DoSomething()
-{
-    Debug.Log("add params");
-}
+private void DoSomething() => Debug.Log("add params");
 
 [Button("Add Params", space:30f)] // add space
-private void DoSomething()
-{
-    Debug.Log("add params");
-}
+private void DoSomething() => Debug.Log("add params");
+
 ```
 
 # ReadOnly
