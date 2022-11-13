@@ -98,12 +98,12 @@ When attempting to save a Vector3 variable's value (or a Quaternion for that mat
 
 [SerializeField] private SerializedQuaternion _quaternion;
 ```
-GameObject extensions
+# GameObject extensions
 
 ```c#
 gameObject.GetOrAddComponent<Rigidbody>();
 ```
-List extensions
+# List extensions
 ```c#
 private IList<string> list = new List<string>() { "string1", "string2", "string3" };
 list.Random(); // return random Ilist element
@@ -115,14 +115,14 @@ list.RemoveRandom(); // remove random element
 list.IsNullOrEmpty(); // check is list empty or null
 
 ```
-Transform extensions
+# Transform extensions
 ```c#
 
 transform.DetachChildren(); // destroys all clildren of this transform
 
 ```
 
-Color extensions
+# Color extensions
 
 ```c#
 
@@ -136,7 +136,7 @@ color.SetNoAlpha();
 
 ```
 
-Scene Field
+Scene Attribute
 ===========
 
 Extension for Unity that allows directly assigning scenes in the Inspector. At runtime, the build index of the scene can be retrieved to, for example, load the scene, without hard-coding or maintaining a list of scene paths. Using this field, the scene info will always be updated even when changing its name, folder, or build index. It's as lightweight as possible, and uses a simple custom inspector:
