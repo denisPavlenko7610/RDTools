@@ -221,64 +221,6 @@ public struct MyStruct
 }
 ```
 
-## Drawer Attributes
-Provide special draw options to serialized fields.
-A field can have only one DrawerAttribute. If a field has more than one, only the bottom one will be used.
-
-### AnimatorParam
-Select an Animator paramater via dropdown interface.
-
-```csharp
-public class NaughtyComponent : MonoBehaviour
-{
-	public Animator someAnimator;
-
-	[AnimatorParam("someAnimator")]
-	public int paramHash;
-
-	[AnimatorParam("someAnimator")]
-	public string paramName;
-}
-```
-
-![inspector](https://github.com/dbrizov/NaughtyAttributes/blob/master/Assets/NaughtyAttributes/Documentation~/AnimatorParam_Inspector.png)
-
-### Button
-A method can be marked as a button. A button appears in the inspector and executes the method if clicked.
-Works both with instance and static methods.
-
-```csharp
-public class NaughtyComponent : MonoBehaviour
-{
-	[Button]
-	private void MethodOne() { }
-
-	[Button("Button Text")]
-	private void MethodTwo() { }
-}
-```
-
-![inspector](https://github.com/dbrizov/NaughtyAttributes/blob/master/Assets/NaughtyAttributes/Documentation~/Button_Inspector.png)
-
-### CurveRange
-Set bounds and modify curve color for AnimationCurves
-
-```csharp
-public class NaughtyComponent : MonoBehaviour
-{
-	[CurveRange(-1, -1, 1, 1)]
-	public AnimationCurve curve;
-	
-	[CurveRange(EColor.Orange)]
-	public AnimationCurve curve1;
-	
-	[CurveRange(0, 0, 5, 5, EColor.Red)]
-	public AnimationCurve curve2;
-}
-```
-
-![inspector](https://github.com/dbrizov/NaughtyAttributes/blob/master/Assets/NaughtyAttributes/Documentation~/CurveRange_Inspector.png)
-
 ### Dropdown
 Provides an interface for dropdown value selection.
 
@@ -350,23 +292,6 @@ public class NaughtyComponent : MonoBehaviour
 
 ![inspector](https://github.com/dbrizov/NaughtyAttributes/blob/master/Assets/NaughtyAttributes/Documentation~/Expandable_Inspector.png)
 
-### HorizontalLine
-
-```csharp
-public class NaughtyComponent : MonoBehaviour
-{
-	[HorizontalLine(color: EColor.Red)]
-	public int red;
-
-	[HorizontalLine(color: EColor.Green)]
-	public int green;
-
-	[HorizontalLine(color: EColor.Blue)]
-	public int blue;
-}
-```
-
-![inspector](https://github.com/dbrizov/NaughtyAttributes/blob/master/Assets/NaughtyAttributes/Documentation~/HorizontalLine_Inspector.png)
 
 ### InfoBox
 Used for providing additional information.
@@ -416,51 +341,7 @@ public class NaughtyComponent : MonoBehaviour
 
 ![inspector](https://github.com/dbrizov/NaughtyAttributes/blob/master/Assets/NaughtyAttributes/Documentation~/Layer_Inspector.png)
 
-### MinMaxSlider
-A double slider. The **min value** is saved to the **X** property, and the **max value** is saved to the **Y** property of a **Vector2** field.
 
-```csharp
-public class NaughtyComponent : MonoBehaviour
-{
-	[MinMaxSlider(0.0f, 100.0f)]
-	public Vector2 minMaxSlider;
-}
-```
-
-![inspector](https://github.com/dbrizov/NaughtyAttributes/blob/master/Assets/NaughtyAttributes/Documentation~/MinMaxSlider_Inspector.png)
-
-### ProgressBar
-```csharp
-public class NaughtyComponent : MonoBehaviour
-{
-	[ProgressBar("Health", 300, EColor.Red)]
-	public int health = 250;
-
-	[ProgressBar("Mana", 100, EColor.Blue)]
-	public int mana = 25;
-
-	[ProgressBar("Stamina", 200, EColor.Green)]
-	public int stamina = 150;
-}
-```
-
-![inspector](https://github.com/dbrizov/NaughtyAttributes/blob/master/Assets/NaughtyAttributes/Documentation~/ProgressBar_Inspector.png)
-
-### ReorderableList
-Provides array type fields with an interface for easy reordering of elements.
-
-```csharp
-public class NaughtyComponent : MonoBehaviour
-{
-	[ReorderableList]
-	public int[] intArray;
-
-	[ReorderableList]
-	public List<float> floatArray;
-}
-```
-
-![inspector](https://github.com/dbrizov/NaughtyAttributes/blob/master/Assets/NaughtyAttributes/Documentation~/ReorderableList_Inspector.gif)
 
 ### ResizableTextArea
 A resizable text area where you can see the whole text.
@@ -476,21 +357,6 @@ public class NaughtyComponent : MonoBehaviour
 
 ![inspector](https://github.com/dbrizov/NaughtyAttributes/blob/master/Assets/NaughtyAttributes/Documentation~/ResizableTextArea_Inspector.gif)
 
-### Scene
-Select a scene from the build settings via dropdown interface.
-
-```csharp
-public class NaughtyComponent : MonoBehaviour
-{
-	[Scene]
-	public string bootScene; // scene name
-
-	[Scene]
-	public int tutorialScene; // scene index
-}
-```
-
-![inspector](https://github.com/dbrizov/NaughtyAttributes/blob/master/Assets/NaughtyAttributes/Documentation~/Scene_Inspector.png)
 
 ### ShowAssetPreview
 Shows the texture preview of a given asset (Sprite, Prefab...).
@@ -508,45 +374,6 @@ public class NaughtyComponent : MonoBehaviour
 
 ![inspector](https://github.com/dbrizov/NaughtyAttributes/blob/master/Assets/NaughtyAttributes/Documentation~/ShowAssetPreview_Inspector.png)
 
-### ShowNativeProperty
-Shows native C# properties in the inspector.
-All native properties are displayed at the bottom of the inspector after the non-serialized fields and before the method buttons.
-It supports only certain types **(bool, int, long, float, double, string, Vector2, Vector3, Vector4, Color, Bounds, Rect, UnityEngine.Object)**.
-
-```csharp
-public class NaughtyComponent : MonoBehaviour
-{
-	public List<Transform> transforms;
-
-	[ShowNativeProperty]
-	public int TransformsCount => transforms.Count;
-}
-```
-
-![inspector](https://github.com/dbrizov/NaughtyAttributes/blob/master/Assets/NaughtyAttributes/Documentation~/ShowNativeProperty_Inspector.png)
-
-### ShowNonSerializedField
-Shows non-serialized fields in the inspector.
-All non-serialized fields are displayed at the bottom of the inspector before the method buttons.
-Keep in mind that if you change a non-static non-serialized field in the code - the value in the inspector will be updated after you press **Play** in the editor.
-There is no such issue with static non-serialized fields because their values are updated at compile time.
-It supports only certain types **(bool, int, long, float, double, string, Vector2, Vector3, Vector4, Color, Bounds, Rect, UnityEngine.Object)**.
-
-```csharp
-public class NaughtyComponent : MonoBehaviour
-{
-	[ShowNonSerializedField]
-	private int myInt = 10;
-
-	[ShowNonSerializedField]
-	private const float PI = 3.14159f;
-
-	[ShowNonSerializedField]
-	private static readonly Vector3 CONST_VECTOR = Vector3.one;
-}
-```
-
-![inspector](https://github.com/dbrizov/NaughtyAttributes/blob/master/Assets/NaughtyAttributes/Documentation~/ShowNonSerializedField_Inspector.png)
 
 ### SortingLayer
 Select a sorting layer via dropdown interface.
@@ -577,43 +404,6 @@ public class NaughtyComponent : MonoBehaviour
 
 ![inspector](https://github.com/dbrizov/NaughtyAttributes/blob/master/Assets/NaughtyAttributes/Documentation~/Tag_Inspector.png)
 
-## Meta Attributes
-Give the fields meta data. A field can have more than one meta attributes.
-
-### BoxGroup
-Surrounds grouped fields with a box.
-
-```csharp
-public class NaughtyComponent : MonoBehaviour
-{
-	[BoxGroup("Integers")]
-	public int firstInt;
-	[BoxGroup("Integers")]
-	public int secondInt;
-
-	[BoxGroup("Floats")]
-	public float firstFloat;
-	[BoxGroup("Floats")]
-	public float secondFloat;
-}
-```
-
-![inspector](https://github.com/dbrizov/NaughtyAttributes/blob/master/Assets/NaughtyAttributes/Documentation~/BoxGroup_Inspector.png)
-
-### Foldout
-Makes a foldout group.
-
-```csharp
-public class NaughtyComponent : MonoBehaviour
-{
-	[Foldout("Integers")]
-	public int firstInt;
-	[Foldout("Integers")]
-	public int secondInt;
-}
-```
-
-![inspector](https://github.com/dbrizov/NaughtyAttributes/blob/master/Assets/NaughtyAttributes/Documentation~/Foldout_Inspector.gif)
 
 ### EnableIf / DisableIf
 ```csharp
@@ -727,22 +517,6 @@ public class NaughtyComponent : MonoBehaviour
 }
 ```
 
-### ReadOnly
-Make a field read only.
-
-```csharp
-public class NaughtyComponent : MonoBehaviour
-{
-	[ReadOnly]
-	public Vector3 forwardVector = Vector3.forward;
-}
-```
-
-![inspector](https://github.com/dbrizov/NaughtyAttributes/blob/master/Assets/NaughtyAttributes/Documentation~/ReadOnly_Inspector.png)
-
-## Validator Attributes
-Used for validating the fields. A field can have infinite number of validator attributes.
-
 ### MinValue / MaxValue
 Clamps integer and float fields.
 
@@ -759,43 +533,4 @@ public class NaughtyComponent : MonoBehaviour
 
 ![inspector](https://github.com/dbrizov/NaughtyAttributes/blob/master/Assets/NaughtyAttributes/Documentation~/MinValueMaxValue_Inspector.gif)
 
-### Required
-Used to remind the developer that a given reference type field is required.
-
-```csharp
-public class NaughtyComponent : MonoBehaviour
-{
-	[Required]
-	public Transform myTransform;
-
-	[Required("Custom required text")]
-	public GameObject myGameObject;
-}
-```
-
-![inspector](https://github.com/dbrizov/NaughtyAttributes/blob/master/Assets/NaughtyAttributes/Documentation~/Required_Inspector.png)
-
-### ValidateInput
-The most powerful ValidatorAttribute.
-
-```csharp
-public class _NaughtyComponent : MonoBehaviour
-{
-	[ValidateInput("IsNotNull")]
-	public Transform myTransform;
-
-	[ValidateInput("IsGreaterThanZero", "myInteger must be greater than zero")]
-	public int myInt;
-
-	private bool IsNotNull(Transform tr)
-	{
-		return tr != null;
-	}
-
-	private bool IsGreaterThanZero(int value)
-	{
-		return value > 0;
-	}
-}
-```
 
