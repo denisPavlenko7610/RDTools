@@ -1,6 +1,6 @@
 Use RDTools nameSpace
 
-#Play audio in inspector
+#Play audio in inspector (by default)
 
 ![image](https://user-images.githubusercontent.com/13468920/201512579-c8a206aa-1150-4b0f-88c7-61438aea7ef2.png)
 
