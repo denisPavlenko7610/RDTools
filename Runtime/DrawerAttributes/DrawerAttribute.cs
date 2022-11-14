@@ -5,7 +5,7 @@ namespace RDTools
     /// <summary>
     /// Base class for all drawer attributes
     /// </summary>
-    public class DrawerAttribute : PropertyAttribute, IRDAttribute
+    public class DrawerAttribute : PropertyAttribute, INaughtyAttribute
     {
     }
 }

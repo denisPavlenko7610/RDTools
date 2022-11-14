@@ -2,7 +2,7 @@
 
 namespace RDTools
 {
-    public class MetaAttribute : Attribute, IRDAttribute
+    public class MetaAttribute : Attribute, INaughtyAttribute
     {
     }
 }

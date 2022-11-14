@@ -3,7 +3,7 @@
 namespace RDTools
 {
     [AttributeUsage(AttributeTargets.Field, AllowMultiple = false, Inherited = true)]
-    public class ReorderableListAttribute : SpecialCaseDrawerAttribute
+    public class EnumFlagsAttribute : DrawerAttribute
     {
     }
 }

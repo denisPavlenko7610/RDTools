@@ -1,4 +1,6 @@
-﻿namespace RDTools
+﻿using System;
+
+namespace RDTools
 {
     public enum EConditionOperator
     {

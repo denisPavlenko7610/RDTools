@@ -2,7 +2,7 @@
 
 namespace RDTools
 {
-    public class SpecialCaseDrawerAttribute : Attribute, IRDAttribute
+    public class SpecialCaseDrawerAttribute : Attribute, INaughtyAttribute
     {
     }
 }
