@@ -324,8 +324,10 @@ public int showIfAny;
 ```
 
 ## Expandable
-Make scriptable objects expandable and editable just in the inspector.
+
 ![image](https://user-images.githubusercontent.com/13468920/201618881-845f22cb-4200-4e31-99c7-b0da37562d88.png)
+
+Make scriptable objects expandable and editable just in the inspector.
 
 ```csharp
 
@@ -336,8 +338,9 @@ public ScriptableObject scriptableObject;
 
 
 ## InfoBox
-Used for providing additional information.
 ![image](https://user-images.githubusercontent.com/13468920/201619090-4905bf55-80cb-4b12-ba28-4d2e34cef7de.png)
+
+Used for providing additional information.
 
 ```csharp
 
@@ -379,9 +382,11 @@ public int layerIndex;
 
 
 ## ResizableTextArea
+
+![image](https://user-images.githubusercontent.com/13468920/201619231-e9323149-9b27-4a2b-af19-ddfec84ea5a4.png)
+
 A resizable text area where you can see the whole text.
 Unlike Unity's **Multiline** and **TextArea** attributes where you can see only 3 rows of a given text, and in order to see it or modify it you have to manually scroll down to the desired row.
-![image](https://user-images.githubusercontent.com/13468920/201619231-e9323149-9b27-4a2b-af19-ddfec84ea5a4.png)
 
 ```csharp
 
@@ -392,8 +397,10 @@ public string resizableTextArea;
 
 
 ## ShowAssetPreview
-Shows the texture preview of a given asset (Sprite, Prefab...).
+
 ![image](https://user-images.githubusercontent.com/13468920/201619344-31edb0b8-4b18-45ef-bcc6-4bdcfbbb2c2f.png)
+
+Shows the texture preview of a given asset (Sprite, Prefab...).
 
 ```csharp
 
