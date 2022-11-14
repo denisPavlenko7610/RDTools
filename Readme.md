@@ -217,9 +217,9 @@ public struct MyStruct
 ```
 
 ## Dropdown
-Provides an interface for dropdown value selection.
 ![image](https://user-images.githubusercontent.com/13468920/201618566-a1add786-b959-4396-8123-2aeb79e91875.png)
 
+Provides an interface for dropdown value selection.
 
 ```csharp
 
