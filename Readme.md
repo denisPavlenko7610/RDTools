@@ -3,8 +3,6 @@
 
 - Use RDTools nameSpace and periodically update the package 🙂
 
-(Recommended to use for your own projects because there is a risk that something could go wrong)
-
 - Actual version - 1.1.1
 - Minimal Unity version - 2020.2
 
