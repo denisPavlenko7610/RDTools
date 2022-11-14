@@ -220,6 +220,8 @@ public struct MyStruct
 
 ## Dropdown
 Provides an interface for dropdown value selection.
+![image](https://user-images.githubusercontent.com/13468920/201618566-a1add786-b959-4396-8123-2aeb79e91875.png)
+
 
 ```csharp
 
@@ -253,6 +255,7 @@ private DropdownList<Vector3> GetVectorValues()
 
 ### EnableIf / DisableIf
 ```csharp
+![image](https://user-images.githubusercontent.com/13468920/201618730-9c090032-4202-4d3d-a74f-b73a7cbb1599.png)
 
 public bool enableMyInt;
 
@@ -322,7 +325,8 @@ public int showIfAny;
 ```
 
 ## Expandable
-Make scriptable objects expandable.
+Make scriptable objects expandable and editable just in the inspector.
+![image](https://user-images.githubusercontent.com/13468920/201618881-845f22cb-4200-4e31-99c7-b0da37562d88.png)
 
 ```csharp
 
@@ -334,6 +338,7 @@ public ScriptableObject scriptableObject;
 
 ## InfoBox
 Used for providing additional information.
+![image](https://user-images.githubusercontent.com/13468920/201619090-4905bf55-80cb-4b12-ba28-4d2e34cef7de.png)
 
 ```csharp
 
@@ -377,6 +382,7 @@ public int layerIndex;
 ## ResizableTextArea
 A resizable text area where you can see the whole text.
 Unlike Unity's **Multiline** and **TextArea** attributes where you can see only 3 rows of a given text, and in order to see it or modify it you have to manually scroll down to the desired row.
+![image](https://user-images.githubusercontent.com/13468920/201619231-e9323149-9b27-4a2b-af19-ddfec84ea5a4.png)
 
 ```csharp
 
@@ -388,6 +394,7 @@ public string resizableTextArea;
 
 ## ShowAssetPreview
 Shows the texture preview of a given asset (Sprite, Prefab...).
+![image](https://user-images.githubusercontent.com/13468920/201619344-31edb0b8-4b18-45ef-bcc6-4bdcfbbb2c2f.png)
 
 ```csharp
 
