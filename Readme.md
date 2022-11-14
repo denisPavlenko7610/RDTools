@@ -5,7 +5,7 @@
 
 (Recommended to use for your own projects because there is a risk that something could go wrong)
 
-- Actual version - 1.1.0
+- Actual version - 1.1.1
 - Minimal Unity version - 2020.2
 
 (some assets were taken from these repositories (https://github.com/baba-s/awesome-unity-open-source-on-github) and have been seriously modified according to the Mit and Apache 2.0 licenses)
@@ -248,6 +248,76 @@ private DropdownList<Vector3> GetVectorValues()
 		{ "Back",    Vector3.back }
 	};
 }
+
+```
+
+### EnableIf / DisableIf
+```csharp
+
+public bool enableMyInt;
+
+[EnableIf("enableMyInt")]
+public int myInt;
+
+[EnableIf("Enabled")]
+public float myFloat;
+
+[EnableIf("NotEnabled")]
+public Vector3 myVector;
+
+public bool Enabled() { return true; }
+
+public bool NotEnabled => false;
+
+```
+
+You can have more than one condition.
+
+```csharp
+
+public bool flag0;
+public bool flag1;
+
+[EnableIf(EConditionOperator.And, "flag0", "flag1")]
+public int enabledIfAll;
+
+[EnableIf(EConditionOperator.Or, "flag0", "flag1")]
+public int enabledIfAny;
+
+```
+
+### ShowIf / HideIf
+```csharp
+
+public bool showInt;
+
+[ShowIf("showInt")]
+public int myInt;
+
+[ShowIf("AlwaysShow")]
+public float myFloat;
+
+[ShowIf("NeverShow")]
+public Vector3 myVector;
+
+public bool AlwaysShow() { return true; }
+
+public bool NeverShow => false;
+	
+```
+
+You can have more than one condition.
+
+```csharp
+
+public bool flag0;
+public bool flag1;
+
+[ShowIf(EConditionOperator.And, "flag0", "flag1")]
+public int showIfAll;
+
+[ShowIf(EConditionOperator.Or, "flag0", "flag1")]
+public int showIfAny;
 
 ```
 
