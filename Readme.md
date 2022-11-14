@@ -252,8 +252,9 @@ private DropdownList<Vector3> GetVectorValues()
 ```
 
 ### EnableIf / DisableIf
-```csharp
+
 ![image](https://user-images.githubusercontent.com/13468920/201618730-9c090032-4202-4d3d-a74f-b73a7cbb1599.png)
+```c#
 
 public bool enableMyInt;
 
