@@ -11,5 +11,14 @@ namespace RDTools.Extensions
                 Object.Destroy(child.gameObject);
             }
         }
+        
+        public static void DestroyChildrenImmediately(this Transform transform)
+        {
+            var tempList = transform.Cast<Transform>().ToList();
+            foreach (Transform child in tempList)
+            {
+                Object.Destroy(child.gameObject);
+            }
+        }
     }
 }
