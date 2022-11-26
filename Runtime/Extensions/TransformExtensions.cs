@@ -18,7 +18,7 @@ namespace RDTools.Extensions
             var tempList = transform.Cast<Transform>().ToList();
             foreach (Transform child in tempList)
             {
-                Object.Destroy(child.gameObject);
+                Object.DestroyImmediate(child.gameObject);
             }
         }
     }
