@@ -12,7 +12,6 @@ namespace RDTools.Editor
         {
             if (target == null)
             {
-                Debug.LogError("The target object is null. Check for missing scripts.");
                 yield break;
             }
 
@@ -35,7 +34,6 @@ namespace RDTools.Editor
         {
             if (target == null)
             {
-                Debug.LogError("The target object is null. Check for missing scripts.");
                 yield break;
             }
 
@@ -58,7 +56,6 @@ namespace RDTools.Editor
         {
             if (target == null)
             {
-                Debug.LogError("The target object is null. Check for missing scripts.");
                 yield break;
             }
 
@@ -79,16 +76,31 @@ namespace RDTools.Editor
 
         public static FieldInfo GetField(object target, string fieldName)
         {
+            if (target == null)
+            {
+                yield break;
+            }
+            
             return GetAllFields(target, f => f.Name.Equals(fieldName, StringComparison.Ordinal)).FirstOrDefault();
         }
 
         public static PropertyInfo GetProperty(object target, string propertyName)
         {
+            if (target == null)
+            {
+                yield break;
+            }
+            
             return GetAllProperties(target, p => p.Name.Equals(propertyName, StringComparison.Ordinal)).FirstOrDefault();
         }
 
         public static MethodInfo GetMethod(object target, string methodName)
         {
+            if (target == null)
+            {
+                yield break;
+            }
+            
             return GetAllMethods(target, m => m.Name.Equals(methodName, StringComparison.Ordinal)).FirstOrDefault();
         }
 
@@ -112,6 +124,11 @@ namespace RDTools.Editor
         /// <returns></returns>
         private static List<Type> GetSelfAndBaseTypes(object target)
         {
+            if (target == null)
+            {
+                yield break;
+            }
+            
             List<Type> types = new List<Type>()
             {
                 target.GetType()
