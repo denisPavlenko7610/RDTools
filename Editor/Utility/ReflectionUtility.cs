@@ -78,7 +78,7 @@ namespace RDTools.Editor
         {
             if (target == null)
             {
-                yield break;
+                return null;
             }
             
             return GetAllFields(target, f => f.Name.Equals(fieldName, StringComparison.Ordinal)).FirstOrDefault();
@@ -88,7 +88,7 @@ namespace RDTools.Editor
         {
             if (target == null)
             {
-                yield break;
+                return null;
             }
             
             return GetAllProperties(target, p => p.Name.Equals(propertyName, StringComparison.Ordinal)).FirstOrDefault();
@@ -98,7 +98,7 @@ namespace RDTools.Editor
         {
             if (target == null)
             {
-                yield break;
+                return null;
             }
             
             return GetAllMethods(target, m => m.Name.Equals(methodName, StringComparison.Ordinal)).FirstOrDefault();
