@@ -126,7 +126,7 @@ namespace RDTools.Editor
         {
             if (target == null)
             {
-                yield break;
+                return null;
             }
             
             List<Type> types = new List<Type>()
