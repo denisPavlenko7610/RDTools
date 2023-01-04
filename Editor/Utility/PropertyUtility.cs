@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿#if UNITY_EDITOR
+using UnityEditor;
 using System.Reflection;
 using System;
 using System.Collections;
@@ -372,3 +373,4 @@ namespace RDTools.Editor
         }
     }
 }
+#endif

@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using UnityEditor;
 
 namespace RDTools.Editor
@@ -32,3 +33,4 @@ namespace RDTools.Editor
         }
     }
 }
+#endif
