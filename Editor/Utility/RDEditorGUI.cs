@@ -2,9 +2,11 @@ using System;
 using System.Collections;
 using System.Linq;
 using System.Reflection;
+#if UNITY_EDITOR
 using UnityEditor;
 using UnityEditor.Experimental.SceneManagement;
 using UnityEditor.SceneManagement;
+#endif
 using UnityEngine;
 
 namespace RDTools.Editor

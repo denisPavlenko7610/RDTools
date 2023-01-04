@@ -4,7 +4,9 @@ using System.Linq;
 using System.Reflection;
 using RDTools.AutoAttach.Utils;
 using RDTools.AutoAttach.Setters;
+#if UNITY_EDITOR
 using UnityEditor.Callbacks;
+#endif
 using UnityEngine;
 using Object = UnityEngine.Object;
 
