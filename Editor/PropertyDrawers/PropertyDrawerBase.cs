@@ -1,6 +1,4 @@
-﻿#if UNITY_EDITOR
-using UnityEditor;
-#endif
+﻿using UnityEditor;
 using UnityEngine;
 
 namespace RDTools.Editor

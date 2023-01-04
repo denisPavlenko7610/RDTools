@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-#if UNITY_EDITOR
 using UnityEditor;
-#endif
 using UnityEngine;
 
 namespace RDTools.Editor

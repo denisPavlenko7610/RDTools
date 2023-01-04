@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using RDTools.AutoAttach.Setters;
-#if UNITY_EDITOR
 using UnityEditor;
 using UnityEditor.EditorTools;
-#endif
 using UnityEngine;
 using Object = UnityEngine.Object;
 
