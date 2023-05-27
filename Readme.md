@@ -182,6 +182,15 @@ color.SetNoAlpha();
 
 ```
 
+## String extensions
+
+```c#
+myString.ToUpperFirstChar();
+
+myList.GetRandomObject();
+
+```
+
 ## With Extensions
 
 ```c#
