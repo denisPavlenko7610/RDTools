@@ -1,4 +1,7 @@
-﻿namespace RDTools.Extensions
+﻿using System;
+usting System.Collections.Generic;
+
+namespace RDTools.Extensions
 {
     public static class StringExtensions
     {
