@@ -393,5 +393,9 @@ public float myFloat;
 
 ```
 
+## Editor extentions
+
+Destroy all children - Destroy all children in the selected game object.
+![image](https://github.com/denisPavlenko7610/RDTools/assets/13468920/60810c2c-f5f4-47c2-861d-ba88c575d2e0)
 
 
