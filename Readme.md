@@ -98,20 +98,6 @@ Examples:
     }
 ```
 
-
-## Serialized vectors, quaternions
-
-- UnityEngine.Vector2,3.. is not marked as Serializable. 
-When attempting to save a Vector3 variable's value (or a Quaternion for that matter) to disk, you may find that Unity will throw a UnityEngine.Vector3 is not marked as Serializable error. To work around this, you can create a new SerializedVector struct that can be used to serialize your Vector3 and saved to disk.
-
-```c#
-[SerializeField] private SerializedVector2 _vector2;
-
-[SerializeField] private SerializedVector3 _vector3;
-
-[SerializeField] private SerializedQuaternion _quaternion;
-```
-
 ## AllowNesting
 This attribute must be used in some cases when you want meta attributes to work inside serializable nested structs or classes.
 
