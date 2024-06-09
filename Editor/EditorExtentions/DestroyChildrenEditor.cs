@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEditor;
 
+#if UNITY_EDITOR
 public class DestroyChildrenEditor : Editor
 {
     [MenuItem("Custom/Destroy All Children")]
@@ -29,3 +30,4 @@ public class DestroyChildrenEditor : Editor
         }
     }
 }
+#endif
