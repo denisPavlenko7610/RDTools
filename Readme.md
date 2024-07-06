@@ -4,8 +4,6 @@
 
 - Minimal Unity version - 2022
 
-(some assets were taken from these repositories (https://github.com/baba-s/awesome-unity-open-source-on-github) and have been seriously modified according to the Mit and Apache 2.0 licenses)
-
 ## Play audio in inspector 
 (by default)
 
