@@ -1,4 +1,5 @@
 ﻿using UnityEditor;
+using UnityEditor.Build;
 
 namespace RDTools.AutoAttach.Utils
 {
@@ -7,11 +8,12 @@ namespace RDTools.AutoAttach.Utils
         public static void AddSymbol(string define)
         {
 #if UNITY_EDITOR
-            string defines = PlayerSettings.GetScriptingDefineSymbolsForGroup(EditorUserBuildSettings.selectedBuildTargetGroup);
+            NamedBuildTarget namedBuildTarget = NamedBuildTarget.FromBuildTargetGroup(EditorUserBuildSettings.selectedBuildTargetGroup);
+            string defines = PlayerSettings.GetScriptingDefineSymbols(namedBuildTarget);
             if (defines.Contains(define))
                 return;
-
-            PlayerSettings.SetScriptingDefineSymbolsForGroup(EditorUserBuildSettings.selectedBuildTargetGroup, $"{defines};{define}");
+            
+            PlayerSettings.SetScriptingDefineSymbols(namedBuildTarget, $"{defines};{define}");
 #endif
         }
     }

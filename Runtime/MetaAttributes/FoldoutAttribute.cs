@@ -2,7 +2,7 @@
 
 namespace RDTools
 {
-    [AttributeUsage(AttributeTargets.Field, AllowMultiple = false, Inherited = true)]
+    [AttributeUsage(AttributeTargets.Field)]
     public class FoldoutAttribute : MetaAttribute, IGroupAttribute
     {
         public string Name { get; private set; }

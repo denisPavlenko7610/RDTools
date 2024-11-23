@@ -25,7 +25,7 @@ namespace RDTools.AutoAttach.Setters
             var componentArray = GetComponents(target, context, elementType, attribute);
             var prevArray = (Array)currentValue;
 
-            if (!attribute.readOnly && prevArray != null && prevArray.Length > 0 &&
+            if (!attribute.ReadOnly && prevArray != null && prevArray.Length > 0 &&
                 ((object[])prevArray).Any(x => x != null))
             {
                 newValue = null;

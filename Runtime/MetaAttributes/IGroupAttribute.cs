@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace RDTools
+﻿namespace RDTools
 {
     public interface IGroupAttribute
     {

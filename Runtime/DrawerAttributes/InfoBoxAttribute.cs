@@ -9,7 +9,7 @@ namespace RDTools
         Error
     }
 
-    [AttributeUsage(AttributeTargets.Field, AllowMultiple = true, Inherited = true)]
+    [AttributeUsage(AttributeTargets.Field, AllowMultiple = true)]
     public class InfoBoxAttribute : DrawerAttribute
     {
         public string Text { get; private set; }

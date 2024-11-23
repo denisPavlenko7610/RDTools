@@ -25,9 +25,7 @@ namespace RDTools.Runtime
             for (int i = list.Count - 1; i > 1; i--)
             {
                 int k = rng.Next(i);
-                var value = list[k];
-                list[k] = list[i];
-                list[i] = value;
+                (list[k], list[i]) = (list[i], list[k]);
             }
         }
 

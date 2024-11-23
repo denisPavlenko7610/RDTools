@@ -10,19 +10,19 @@ namespace RDTools.AutoAttach
     {
         private static readonly object[] Buffer = new object[1];
         private static readonly Type[] TypeBuffer = { typeof(object) };
-        public readonly bool readOnly;
+        public readonly bool ReadOnly;
         private MethodInfo _filterMethodInfo;
         private bool _initialized;
 
         public AttachAttribute(Attach type = Attach.Default, bool readOnly = true)
         {
             Type = type;
-            this.readOnly = readOnly;
+            ReadOnly = readOnly;
         }
 
-        public AttachAttribute(bool readOnly)
+        protected AttachAttribute(bool readOnly)
         {
-            this.readOnly = readOnly;
+            ReadOnly = readOnly;
         }
 
         public string FilterMethodName { get; set; }

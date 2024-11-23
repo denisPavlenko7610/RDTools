@@ -60,9 +60,7 @@ namespace RDTools
                 return buildIndex;
             }
         }
-
-        #region ISerializationCallbackReceiver implementation
-
+        
 #if UNITY_EDITOR
         
         /// <summary>
@@ -85,15 +83,11 @@ namespace RDTools
         
 #endif
 
-        #endregion
-
-        #region Build processor
-
 #if UNITY_EDITOR
         
         class BuildProcessor : IPreprocessBuildWithReport, IPostprocessBuildWithReport
         {
-            static HashSet<SceneAsset> missingRequiredSceneAssets = new HashSet<SceneAsset>();
+            static HashSet<SceneAsset> missingRequiredSceneAssets = new();
             static bool requiredSceneIsUnassigned;
             
             /// <summary>Adds a missing required scene error to be shown when building. The added errors will be cleared when a new build is started.</summary>
@@ -148,15 +142,10 @@ namespace RDTools
 
 #endif
 
-        #endregion
-
-
-        #region Editor members
-
 #if UNITY_EDITOR
 
 
-        static Dictionary<SceneAsset, int> cachedBuildIndexes = new Dictionary<SceneAsset, int>();
+        static Dictionary<SceneAsset, int> cachedBuildIndexes = new();
 
 
         /// <summary>
@@ -211,7 +200,5 @@ namespace RDTools
         }
 
 #endif
-
-        #endregion
     }
 }

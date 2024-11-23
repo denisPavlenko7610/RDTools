@@ -16,7 +16,7 @@ namespace RDTools.AutoAttach.Editor
 
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
-            using (new EditorGUI.DisabledScope(Attribute.readOnly))
+            using (new EditorGUI.DisabledScope(Attribute.ReadOnly))
             {
                 EditorGUI.PropertyField(position, property, label, true);
             }

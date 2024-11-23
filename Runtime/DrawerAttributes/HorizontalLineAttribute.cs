@@ -2,7 +2,7 @@
 
 namespace RDTools
 {
-    [AttributeUsage(AttributeTargets.Field, AllowMultiple = true, Inherited = true)]
+    [AttributeUsage(AttributeTargets.Field, AllowMultiple = true)]
     public class HorizontalLineAttribute : DrawerAttribute
     {
         public const float DefaultHeight = 2.0f;

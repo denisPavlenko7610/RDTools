@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace RDTools
 {
-    [AttributeUsage(AttributeTargets.Field, AllowMultiple = false, Inherited = true)]
+    [AttributeUsage(AttributeTargets.Field)]
     public class DropdownAttribute : DrawerAttribute
     {
         public string ValuesName { get; private set; }

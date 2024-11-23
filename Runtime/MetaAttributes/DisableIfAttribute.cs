@@ -2,7 +2,7 @@
 
 namespace RDTools
 {
-    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Method, AllowMultiple = false, Inherited = true)]
+    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Method)]
     public class DisableIfAttribute : EnableIfAttributeBase
     {
         public DisableIfAttribute(string condition)

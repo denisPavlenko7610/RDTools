@@ -18,7 +18,7 @@ namespace RDTools.AutoAttach.Setters
         public override bool TrySetField(Component target, object context, object currentValue, Type fieldType,
             AttachAttribute attribute, out object newValue)
         {
-            if (!attribute.readOnly && currentValue != null)
+            if (!attribute.ReadOnly && currentValue != null)
             {
                 if (currentValue is Object obj)
                 {

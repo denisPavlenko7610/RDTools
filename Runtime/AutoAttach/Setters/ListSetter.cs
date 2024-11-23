@@ -23,7 +23,7 @@ namespace RDTools.AutoAttach.Setters
         {
             var list = (IList)currentValue;
 
-            if (!attribute.readOnly && list != null && list.Count > 0 && ((IReadOnlyList<object>)list).Any(x => x != null))
+            if (!attribute.ReadOnly && list != null && list.Count > 0 && ((IReadOnlyList<object>)list).Any(x => x != null))
             {
                 newValue = null;
                 return false;

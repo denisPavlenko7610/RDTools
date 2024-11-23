@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
 using Object = UnityEngine.Object;
-#if ZENJECT
-using Zenject;
-#endif
 
 namespace RDTools.AutoAttach.Setters
 {
@@ -46,12 +43,6 @@ namespace RDTools.AutoAttach.Setters
             }
 
             return Buffer;
-        }
-
-        [Obsolete]
-        public virtual bool TrySetField(Component target, FieldInfo fieldInfo, AttachAttribute attribute)
-        {
-            return false;
         }
 
         public virtual bool TrySetField(Component monoBehaviour,
@@ -97,10 +88,6 @@ namespace RDTools.AutoAttach.Setters
                     return target.GetComponentsInParent(elementType, true);
                 case Attach.Scene:
                     return Object.FindObjectsOfType(elementType, true);
-#if ZENJECT
-                case Attach.ZenjectContext:
-                    return target.GetComponentInParent<Context>().GetComponentsInChildren(elementType, true);
-#endif
                 default:
                     return target.GetComponents(elementType);
             }

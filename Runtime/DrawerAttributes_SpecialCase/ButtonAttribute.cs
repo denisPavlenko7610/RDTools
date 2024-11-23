@@ -18,7 +18,7 @@ namespace RDTools
         Playmode
     }
 
-    [AttributeUsage(AttributeTargets.Method, AllowMultiple = false, Inherited = true)]
+    [AttributeUsage(AttributeTargets.Method)]
     public class ButtonAttribute : SpecialCaseDrawerAttribute
     {
         public string Text { get; private set; }
@@ -26,8 +26,8 @@ namespace RDTools
 
         public ButtonAttribute(string text = null, EButtonEnableMode enabledMode = EButtonEnableMode.Always)
         {
-            this.Text = text;
-            this.SelectedEnableMode = enabledMode;
+            Text = text;
+            SelectedEnableMode = enabledMode;
         }
     }
 }

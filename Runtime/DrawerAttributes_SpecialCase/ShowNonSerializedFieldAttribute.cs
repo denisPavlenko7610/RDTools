@@ -2,7 +2,7 @@
 
 namespace RDTools
 {
-    [AttributeUsage(AttributeTargets.Field, AllowMultiple = false, Inherited = true)]
+    [AttributeUsage(AttributeTargets.Field)]
     public class ShowNonSerializedFieldAttribute : SpecialCaseDrawerAttribute
     {
     }
